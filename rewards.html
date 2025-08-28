@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mukuru Rewards - Silver Status</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rewards.css">
+</head>
+<body>
+<div class="mukuru-card">
+  <div class="card-header">
+    <h1>Mukuru Rewards</h1>
+    <p>Elevate your financial experience</p>
+  </div>
+
+  <div class="card-content">
+    <div class="status-card">
+      <div class="status-title">
+        <div class="status-icon">
+          <i class="fas fa-crown"></i>
+        </div>
+        <h2 class="status-name">Silver Status</h2>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      
+      <div class="progress-text">
+        <span>300 points</span>
+        <span>500 points for Gold</span>
+      </div>
+      
+      <div class="status-info">
+        <h3><i class="fas fa-info-circle"></i> How to maintain your status</h3>
+        <p>Send money at least once a month to maintain your Silver status and unlock exclusive rewards.</p>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <h2 class="section-title">Spending Options</h2>
+      
+      <div class="options-grid">
+        <div class="option-item">
+          <div class="option-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <p class="option-text">Airtime & Data</p>
+        </div>
+        
+        <div class="option-item">
+          <div class="option-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <p class="option-text">Electricity</p>
+        </div>
+        
+        <div class="option-item">
+          <div class="option-icon">
+            <i class="fas fa-bus"></i>
+          </div>
+          <p class="option-text">Bus Tickets</p>
+        </div>
+        
+        <div class="option-item">
+          <div class="option-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <p class="option-text">Vouchers</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="points-display">
+      <div class="point earned">50</div>
+      <div class="point earned">100</div>
+      <div class="point">150</div>
+      <div class="point">200</div>
+      <div class="point">250</div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
+  </div>
+</div>
+
+<script>
+  // Simple animation for progress bar
+  document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.querySelector('.progress-bar');
+    setTimeout(() => {
+      progressBar.style.width = '60%';
+    }, 300);
+  });
+</script>
+</body>
+</html>
