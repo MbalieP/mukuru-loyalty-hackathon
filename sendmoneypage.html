@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Money</title>
+    <link rel="stylesheet" href="sendmoneypgstyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo">Mukuru<span>Rewards</span></div>
+        <div class="user-profile">
+          <div class="user-avatar">M</div>
+          <div class="user-info">
+            <h3>Mbali</h3>
+            <p>Silver Member</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="send-money-container">
+        <!-- Left Column -->
+        <div class="left-column">
+          <!-- Balance Card -->
+          <div class="balance-card">
+            <h2 class="card-title">
+              <i class="fas fa-wallet"></i> Available Balance
+            </h2>
+            <div class="balance-amount">R 2,450.00</div>
+            <p class="balance-subtext">
+              Current available balance for sending money
+            </p>
+          </div>
+
+          <!-- Rewards Info -->
+          <div class="rewards-info">
+            <div class="rewards-points">
+              <div class="points-badge">300</div>
+              <div class="points-text">
+                <h3>Your Reward Points</h3>
+                <p>Earn more points when you send money</p>
+              </div>
+            </div>
+            <div class="points-rate">
+              <i class="fas fa-gift"></i>
+              <p>
+                Earn <strong>1 point</strong> for every
+                <strong>R100</strong> sent
+              </p>
+            </div>
+          </div>
+
+          <!-- Transaction Form -->
+          <form class="transaction-form" id="sendMoneyForm">
+            <h2 class="form-title">
+              <i class="fas fa-paper-plane"></i> Send Money
+            </h2>
+
+            <div class="form-group">
+              <label for="recipientName">Recipient Name</label>
+              <div class="input-with-icon">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  id="recipientName"
+                  placeholder="Enter recipient's full name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="recipientCountry">Recipient Country</label>
+              <div class="input-with-icon">
+                <i class="fas fa-globe-africa"></i>
+                <select id="recipientCountry" required>
+                  <option value="">Select country</option>
+                  <option value="zimbabwe">Zimbabwe</option>
+                  <option value="zambia">Lesotho</option>
+                  <option value="malawi">Malawi</option>
+                  <option value="mozambique">Mozambique</option>
+                  <option value="botswana">Rwanda</option>
+                  <option value="nigeria">Nigeria</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="recipientPhone">Recipient Phone Number</label>
+              <div class="input-with-icon">
+                <i class="fas fa-phone"></i>
+                <input
+                  type="tel"
+                  id="recipientPhone"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Amount to Send (ZAR)</label>
+              <div class="input-with-icon">
+                <i class="fas fa-rand-sign"></i>
+                <input
+                  type="number"
+                  id="amount"
+                  class="amount-input"
+                  placeholder="0.00"
+                  min="1"
+                  step="0.01"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="sendButton">
+              <i class="fas fa-paper-plane"></i> Send Money
+            </button>
+          </form>
+        </div>
+
+        <!-- Transaction Animation -->
+        <div class="transaction-animation">
+          <h2 class="card-title">
+            <i class="fas fa-rocket"></i> Transaction Process
+          </h2>
+
+          <div class="animation-container">
+            <div class="world-map">
+              <i
+                class="fas fa-globe-americas"
+                style="font-size: 80px; color: #3b9d8d"
+              ></i>
+            </div>
+            <div class="orbit-path"></div>
+            <div class="plane" id="plane">
+              <i class="fas fa-plane"></i>
+            </div>
+          </div>
+
+          <p>Enter transaction details and send to see the animation</p>
+
+          <!-- Success Message (Initially Hidden) -->
+          <div class="transaction-message success-message" id="successMessage">
+            <div class="message-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="message-title">Transaction Successful!</div>
+            <div class="message-details">
+              Your money has been sent successfully to
+              <span id="successRecipient"></span>.
+            </div>
+            <div class="message-details">
+              Amount sent: <strong id="successAmount"></strong>
+            </div>
+            <span class="points-earned" id="pointsEarned"></span>
+            <button
+              class="btn btn-primary"
+              style="margin-top: 15px"
+              onclick="resetForm()"
+            >
+              <i class="fas fa-redo"></i> Send Again
+            </button>
+          </div>
+
+          <!-- Error Message (Initially Hidden) -->
+          <div class="transaction-message error-message" id="errorMessage">
+            <div class="message-icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="message-title">Transaction Failed</div>
+            <div class="message-details" id="errorDetails">
+              Insufficient balance to complete this transaction.
+            </div>
+            <button
+              class="btn btn-primary"
+              style="margin-top: 15px"
+              onclick="resetForm()"
+            >
+              <i class="fas fa-redo"></i> Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="sendmoneypgscript.js"></script>
+  </body>
+</html>
