@@ -411,6 +411,15 @@ body {
   color: var(--mukuru-primary);
 }
 
+.card-footer {
+  text-align: center;
+  padding: 24px;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.7);
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .dashboard-container {

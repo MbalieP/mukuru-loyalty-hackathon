@@ -1,6 +1,6 @@
 // Current user balance (in Rands)
 const userBalance = 2450.0;
-let currentPoints = 354;
+let currentPoints = 300;
 
 // Get form and UI elements
 const form = document.getElementById("sendMoneyForm");
