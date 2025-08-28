@@ -1,50 +1,94 @@
-
 :root {
-  --mukuru-primary: #FF6B00;
-  --mukuru-secondary: #FF8C3A;
-  --mukuru-dark: #1A1A1A;
-  --mukuru-light: #FFF5EB;
-  --mukuru-gray: #F5F5F7;
+  --mukuru-primary: #ff6b00;
+  --mukuru-secondary: #ff8c3a;
+  --mukuru-dark: #1a1a1a;
+  --mukuru-light: #fff5eb;
+  --mukuru-gray: #f5f5f7;
   --mukuru-text: #333333;
   --mukuru-green: #3b9d8d;
-  
+
   /* Bronze colors */
-  --bronze-light: #F8EDE0;
-  --bronze-medium: #E2BE9E;
-  --bronze-dark: #B08D6E;
-  --bronze-accent: #9C7C65;
-  
+  --bronze-light: #f8ede0;
+  --bronze-medium: #e2be9e;
+  --bronze-dark: #b08d6e;
+  --bronze-accent: #9c7c65;
+
   /* Silver colors */
-  --silver-light: #F3F4F6;
-  --silver-medium: #E5E7EB;
-  --silver-dark: #D1D5DB;
-  --silver-accent: #9CA3AF;
-  
+  --silver-light: #f3f4f6;
+  --silver-medium: #e5e7eb;
+  --silver-dark: #d1d5db;
+  --silver-accent: #9ca3af;
+
   /* Gold colors */
-  --gold-light: #FEF9E7;
-  --gold-medium: #F9E3A2;
-  --gold-dark: #D4AF37;
-  --gold-accent: #BF9B30;
+  --gold-light: #fef9e7;
+  --gold-medium: #f9e3a2;
+  --gold-dark: #d4af37;
+  --gold-accent: #bf9b30;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #FFF5EB 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
   margin: 0;
   padding: 20px;
   min-height: 100vh;
   color: var(--mukuru-text);
 }
 
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: var(--mukuru-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.nav-item.active {
+  background: var(--mukuru-light);
+  color: var(--mukuru-primary);
+}
+
+.nav-item:hover:not(.active) {
+  background: rgba(255, 107, 0, 0.05);
+}
+
+.nav-icon {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-left: 260px;
+  padding: 20px;
 }
 
 /* Header Styles */
@@ -125,19 +169,19 @@ header {
 }
 
 .status-card.bronze {
-  background: linear-gradient(135deg, #F8EDE0 0%, var(--bronze-light) 100%);
+  background: linear-gradient(135deg, #f8ede0 0%, var(--bronze-light) 100%);
   border: 1px solid var(--bronze-medium);
 }
 
 .status-card.silver {
-  background: linear-gradient(135deg, #F9FAFB 0%, var(--silver-light) 100%);
+  background: linear-gradient(135deg, #f9fafb 0%, var(--silver-light) 100%);
   border: 1px solid var(--silver-medium);
   transform: scale(1.03);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .status-card.gold {
-  background: linear-gradient(135deg, #FEF9E7 0%, var(--gold-light) 100%);
+  background: linear-gradient(135deg, #fef9e7 0%, var(--gold-light) 100%);
   border: 1px solid var(--gold-medium);
 }
 
@@ -172,17 +216,29 @@ header {
 }
 
 .status-icon.bronze {
-  background: linear-gradient(135deg, var(--bronze-accent) 0%, var(--bronze-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bronze-accent) 0%,
+    var(--bronze-dark) 100%
+  );
   color: white;
 }
 
 .status-icon.silver {
-  background: linear-gradient(135deg, var(--silver-accent) 0%, var(--silver-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--silver-accent) 0%,
+    var(--silver-dark) 100%
+  );
   color: white;
 }
 
 .status-icon.gold {
-  background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--gold-accent) 0%,
+    var(--gold-dark) 100%
+  );
   color: white;
 }
 
@@ -197,11 +253,11 @@ header {
 }
 
 .status-name.silver {
-  color: #4B5563;
+  color: #4b5563;
 }
 
 .status-name.gold {
-  color: #7C6A0A;
+  color: #7c6a0a;
 }
 
 .status-description {
@@ -352,7 +408,11 @@ header {
 .progress-bar {
   height: 100%;
   width: 60%;
-  background: linear-gradient(to right, var(--mukuru-primary), var(--mukuru-secondary));
+  background: linear-gradient(
+    to right,
+    var(--mukuru-primary),
+    var(--mukuru-secondary)
+  );
   border-radius: 12px;
   position: relative;
   box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
@@ -375,7 +435,11 @@ header {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, var(--mukuru-primary) 0%, var(--mukuru-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--mukuru-primary) 0%,
+    var(--mukuru-secondary) 100%
+  );
   border-radius: 20px;
   padding: 40px;
   text-align: center;
@@ -438,7 +502,7 @@ header {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .status-card.silver {
     transform: scale(1);
   }
@@ -450,15 +514,15 @@ header {
     gap: 16px;
     text-align: center;
   }
-  
+
   .page-title h1 {
     font-size: 28px;
   }
-  
+
   .cta-title {
     font-size: 24px;
   }
-  
+
   .cta-description {
     font-size: 16px;
   }
@@ -468,15 +532,16 @@ header {
   body {
     padding: 15px;
   }
-  
+
   .status-card {
     padding: 20px;
   }
-  
-  .progress-section, .cta-section {
+
+  .progress-section,
+  .cta-section {
     padding: 24px;
   }
-  
+
   .cta-title {
     font-size: 22px;
   }

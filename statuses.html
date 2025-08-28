@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mukuru Rewards - Status Comparison</title>
+    <title>Status Comparison</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,14 +15,33 @@
     <link rel="stylesheet" href="statusstyle.css" />
   </head>
   <body>
+    <aside class="sidebar">
+      <a href="#" id="home" class="nav-item active">
+        <div class="nav-icon"><i class="fas fa-home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="#" id="send-money" class="nav-item">
+        <div class="nav-icon"><i class="fas fa-exchange-alt"></i></div>
+        <span>Send Money</span>
+      </a>
+      <a href="#" id="history" class="nav-item">
+        <div class="nav-icon"><i class="fas fa-history"></i></div>
+        <span>Transaction History</span>
+      </a>
+      <a href="#" class="nav-item">
+        <div class="nav-icon"><i class="fas fa-user"></i></div>
+        <span>Profile Settings</span>
+      </a>
+      <a href="#" class="nav-item">
+        <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
+        <span>Help & Support</span>
+      </a>
+    </aside>
+
     <div class="container">
       <!-- Header -->
       <header>
         <div class="logo">Mukuru<span>Rewards</span></div>
-        <a href="#" class="back-button">
-          <i class="fas fa-arrow-left"></i>
-          Back to Dashboard
-        </a>
       </header>
 
       <!-- Page Title -->
@@ -288,6 +307,29 @@
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Dashboard → go to landingpage.html
+        document.getElementById("home").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "landingpage.html";
+        });
+
+        // Transaction History → scroll to bottom
+        document.getElementById("history").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "landingpage.html";
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        });
+
+        // Send Money → go to sendmoneypage.html
+        document.getElementById("send-money").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "sendmoneypage.html";
+        });
+      });
       // Simple animation for progress bar
       document.addEventListener("DOMContentLoaded", function () {
         const progressBar = document.querySelector(".progress-bar");

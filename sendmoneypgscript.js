@@ -1,3 +1,32 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Dashboard → go to landingpage.html
+  document.getElementById("home").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "landingpage.html";
+  });
+
+  document.getElementById("explore-statuses").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "statuses.html";
+  });
+
+  // Transaction History → scroll to bottom
+  document.getElementById("history").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "landingpage.html";
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  });
+
+  // Send Money → go to sendmoneypage.html
+  document.getElementById("send-now").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "sendmoneypage.html";
+  });
+});
+
 // Current user balance (in Rands)
 const userBalance = 2450.0;
 let currentPoints = 300;
