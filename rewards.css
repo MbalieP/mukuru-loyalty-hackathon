@@ -5,6 +5,7 @@
   --mukuru-light: #FFF5EB;
   --mukuru-gray: #F5F5F7;
   --mukuru-text: #333333;
+  --mukuru-green: #3b9d8d;
 }
 
 * {
@@ -76,6 +77,10 @@ body {
   font-weight: 300;
   position: relative;
   z-index: 2;
+}
+
+.card-header span{
+  color: var(--mukuru-green);
 }
 
 .card-content {
