@@ -8,7 +8,7 @@ public class HistoryDO {
 
     public String cellphone;
 
-    public int amount;
+    public float amount;
 
     public String date;
 

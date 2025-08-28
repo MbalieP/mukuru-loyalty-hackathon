@@ -21,7 +21,7 @@ public class Database {
             stmt.execute("CREATE TABLE IF NOT EXISTS history (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "cellphone TEXT NOT NULL," +
-                    "amount INTEGER NOT NULL," +
+                    "amount FLOAT NOT NULL," +
                     "date TEXT NOT NULL," +
                     "points INTEGER NOT NULL," +
                     "status TEXT NOT NULL);");
