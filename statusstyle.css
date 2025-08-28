@@ -1,25 +1,41 @@
+
 :root {
-  --mukuru-primary: #ff6b00;
-  --mukuru-secondary: #ff8c3a;
-  --mukuru-dark: #1a1a1a;
-  --mukuru-light: #fff5eb;
-  --mukuru-gray: #f5f5f7;
-  --mukuru-green: #3b9d8d;
+  --mukuru-primary: #FF6B00;
+  --mukuru-secondary: #FF8C3A;
+  --mukuru-dark: #1A1A1A;
+  --mukuru-light: #FFF5EB;
+  --mukuru-gray: #F5F5F7;
   --mukuru-text: #333333;
-  --bronze: #cd7f32;
-  --silver: #c0c0c0;
-  --gold: #ffd700;
+  --mukuru-green: #3b9d8d;
+  
+  /* Bronze colors */
+  --bronze-light: #F8EDE0;
+  --bronze-medium: #E2BE9E;
+  --bronze-dark: #B08D6E;
+  --bronze-accent: #9C7C65;
+  
+  /* Silver colors */
+  --silver-light: #F3F4F6;
+  --silver-medium: #E5E7EB;
+  --silver-dark: #D1D5DB;
+  --silver-accent: #9CA3AF;
+  
+  /* Gold colors */
+  --gold-light: #FEF9E7;
+  --gold-medium: #F9E3A2;
+  --gold-dark: #D4AF37;
+  --gold-accent: #BF9B30;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #FFF5EB 0%, #FFFFFF 100%);
   margin: 0;
   padding: 20px;
   min-height: 100vh;
@@ -37,12 +53,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .logo {
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--mukuru-primary);
 }
 
@@ -57,6 +73,11 @@ header {
   text-decoration: none;
   color: var(--mukuru-primary);
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--mukuru-secondary);
 }
 
 /* Page Title */
@@ -66,130 +87,199 @@ header {
 }
 
 .page-title h1 {
-  font-size: 2.5rem;
+  font-size: 32px;
+  font-weight: 700;
   color: var(--mukuru-dark);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .page-title p {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: #666;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 /* Status Comparison */
 .status-comparison {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 24px;
   margin-bottom: 50px;
 }
 
 .status-card {
-  background: white;
   border-radius: 20px;
-  overflow: hidden;
+  padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s;
   position: relative;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .status-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+}
+
+.status-card.bronze {
+  background: linear-gradient(135deg, #F8EDE0 0%, var(--bronze-light) 100%);
+  border: 1px solid var(--bronze-medium);
+}
+
+.status-card.silver {
+  background: linear-gradient(135deg, #F9FAFB 0%, var(--silver-light) 100%);
+  border: 1px solid var(--silver-medium);
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.status-card.gold {
+  background: linear-gradient(135deg, #FEF9E7 0%, var(--gold-light) 100%);
+  border: 1px solid var(--gold-medium);
+}
+
+.current-status-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--mukuru-primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
 }
 
 .status-header {
-  padding: 25px;
   text-align: center;
-  color: white;
-}
-
-.bronze .status-header {
-  background: linear-gradient(135deg, var(--bronze) 0%, #e3964e 100%);
-}
-
-.silver .status-header {
-  background: linear-gradient(135deg, var(--silver) 0%, #d7d7d7 100%);
-}
-
-.gold .status-header {
-  background: linear-gradient(135deg, var(--gold) 0%, #ffe44d 100%);
+  margin-bottom: 24px;
 }
 
 .status-icon {
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 15px;
-  font-size: 28px;
+  margin: 0 auto 16px;
+  font-size: 24px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.status-icon.bronze {
+  background: linear-gradient(135deg, var(--bronze-accent) 0%, var(--bronze-dark) 100%);
+  color: white;
+}
+
+.status-icon.silver {
+  background: linear-gradient(135deg, var(--silver-accent) 0%, var(--silver-dark) 100%);
+  color: white;
+}
+
+.status-icon.gold {
+  background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-dark) 100%);
+  color: white;
 }
 
 .status-name {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.status-name.bronze {
+  color: var(--bronze-dark);
+}
+
+.status-name.silver {
+  color: #4B5563;
+}
+
+.status-name.gold {
+  color: #7C6A0A;
 }
 
 .status-description {
+  color: #666;
   font-size: 14px;
-  opacity: 0.9;
 }
 
 .status-requirements {
-  padding: 20px;
-  background: var(--mukuru-light);
-  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--mukuru-primary);
+}
+
+.status-requirements p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
   font-size: 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: 555;
 }
 
 .status-requirements i {
-  margin-right: 8px;
   color: var(--mukuru-primary);
 }
 
 .status-benefits {
-  padding: 25px;
+  margin-bottom: 24px;
 }
 
 .benefit-title {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: var(--mukuru-dark);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefit-title i {
+  color: var(--mukuru-primary);
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
 }
 
 .benefit-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
-  background: var(--mukuru-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  background: rgba(255, 107, 0, 0.1);
   color: var(--mukuru-primary);
+  flex-shrink: 0;
 }
 
 .benefit-info {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .benefit-name {
   font-weight: 500;
-  margin-bottom: 4px;
+  font-size: 14px;
+  color: #444;
 }
 
 .benefit-value {
@@ -198,50 +288,38 @@ header {
 }
 
 .status-features {
-  padding: 20px;
-  background: var(--mukuru-light);
-  border-radius: 0 0 20px 20px;
+  margin-top: auto;
 }
 
 .feature-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   color: var(--mukuru-dark);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-title i {
+  color: var(--mukuru-primary);
 }
 
 .feature-list {
   list-style: none;
+  padding: 0;
 }
 
 .feature-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-}
-
-.feature-list li:last-child {
-  border-bottom: none;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
 }
 
 .feature-list i {
-  margin-right: 10px;
   color: var(--mukuru-primary);
-}
-
-.current-status-badge {
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  background: var(--mukuru-primary);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
 }
 
 /* Progress Section */
@@ -250,39 +328,34 @@ header {
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .progress-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
   color: var(--mukuru-dark);
+  margin-bottom: 20px;
 }
 
 .progress-container {
   width: 100%;
-  background-color: rgba(255, 140, 58, 0.15);
+  background-color: rgba(209, 213, 219, 0.4);
   border-radius: 12px;
   margin: 20px 0;
   overflow: hidden;
-  height: 15px;
+  height: 12px;
   position: relative;
 }
 
 .progress-bar {
   height: 100%;
   width: 60%;
-  background: linear-gradient(
-    to right,
-    var(--mukuru-primary),
-    var(--mukuru-secondary)
-  );
+  background: linear-gradient(to right, var(--mukuru-primary), var(--mukuru-secondary));
   border-radius: 12px;
   position: relative;
   box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
-  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .progress-text {
@@ -294,45 +367,59 @@ header {
   font-weight: 500;
 }
 
+.progress-section p {
+  margin-top: 16px;
+  color: #666;
+  font-size: 16px;
+}
+
 /* CTA Section */
 .cta-section {
+  background: linear-gradient(135deg, var(--mukuru-primary) 0%, var(--mukuru-secondary) 100%);
+  border-radius: 20px;
+  padding: 40px;
   text-align: center;
-  margin-bottom: 50px;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .cta-title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--mukuru-dark);
+  margin-bottom: 16px;
 }
 
 .cta-description {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
   max-width: 600px;
-  margin: 0 auto 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
-  padding: 15px 30px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
+  padding: 16px 32px;
+  border-radius: 30px;
   border: none;
   font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
-  background: var(--mukuru-primary);
-  color: white;
+  background: white;
+  color: var(--mukuru-primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-  background: var(--mukuru-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Footer */
 .card-footer {
   text-align: center;
   padding: 24px;
@@ -340,23 +427,57 @@ header {
   font-size: 14px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   background: rgba(255, 255, 255, 0.7);
+  border-radius: 0 0 20px 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
   .status-comparison {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .status-card.silver {
+    transform: scale(1);
   }
 }
 
-@media (max-width: 576px) {
-  .page-title h1 {
-    font-size: 2rem;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
+  
+  .page-title h1 {
+    font-size: 28px;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+  }
+  
+  .cta-description {
+    font-size: 16px;
+  }
+}
 
-  .status-name {
-    font-size: 20px;
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  .status-card {
+    padding: 20px;
+  }
+  
+  .progress-section, .cta-section {
+    padding: 24px;
+  }
+  
+  .cta-title {
+    font-size: 22px;
   }
 }

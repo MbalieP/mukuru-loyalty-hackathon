@@ -54,28 +54,28 @@
           <h2 class="section-title">Spending Options</h2>
 
           <div class="options-grid">
-            <div class="option-item">
+            <div class="option-item" data-category="airtime">
               <div class="option-icon">
                 <i class="fas fa-mobile-alt"></i>
               </div>
               <p class="option-text">Airtime & Data</p>
             </div>
 
-            <div class="option-item">
+            <div class="option-item" data-category="electricity">
               <div class="option-icon">
                 <i class="fas fa-bolt"></i>
               </div>
               <p class="option-text">Electricity</p>
             </div>
 
-            <div class="option-item">
+            <div class="option-item" data-category="bus">
               <div class="option-icon">
                 <i class="fas fa-bus"></i>
               </div>
               <p class="option-text">Bus Tickets</p>
             </div>
 
-            <div class="option-item">
+            <div class="option-item" data-category="vouchers">
               <div class="option-icon">
                 <i class="fas fa-gift"></i>
               </div>
@@ -97,6 +97,118 @@
         <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
       </div>
     </div>
-    <script src="rewardsscript.js"></script>
+
+    <!-- Modal for displaying options -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modalTitle">Options</h3>
+          <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <ul class="option-list" id="optionList">
+            <!-- Options will be dynamically inserted here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simple animation for progress bar
+      document.addEventListener("DOMContentLoaded", function () {
+        const progressBar = document.querySelector(".progress-bar");
+        setTimeout(() => {
+          progressBar.style.width = "60%";
+        }, 300);
+        
+        // Add click event listeners to option items
+        const optionItems = document.querySelectorAll('.option-item');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const optionList = document.getElementById('optionList');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Define options for each category
+        const categoryOptions = {
+          airtime: [
+            { name: "R50 Airtime", icon: "fas fa-signal" },
+            { name: "100mb Data", icon: "fas fa-signal" },
+            { name: "R100 Airtime", icon: "fas fa-signal" },
+            { name: "200mb", icon: "fas fa-signal" },
+            
+          ],
+          electricity: [
+            
+            { name: "R50 Electricity Token", icon: "fas fa-bolt" },
+            { name: "R100 Electricity Token", icon: "fas fa-bolt" },
+          
+            
+          ],
+          bus: [
+            { name: "10% Greyhound bus Tickets", icon: "fas fa-bus" },
+            { name: "10% Tamuka busTickets", icon: "fas fa-bus" },
+            { name: "10% Shalom bus Tickets", icon: "fas fa-bus" },
+            { name: "10% Ulemu bus Tickets", icon: "fas fa-bus" }
+          ],
+          vouchers: [
+            { name: "R100 pep Voucher", icon: "fas fa-shopping-cart" },
+            { name: "R100 Shoprite Voucher", icon: "fas fa-shopping-basket" },
+            { name: "R100 OTT Voucher", icon: "fas fa-tv" },
+            
+          ]
+        };
+        
+        // Category titles
+        const categoryTitles = {
+          airtime: "Airtime & Data Options",
+          electricity: "Electricity Providers",
+          bus: "Bus Ticket Options",
+          vouchers: "Voucher Options"
+        };
+        
+        // Add click event to each option item
+        optionItems.forEach(item => {
+          item.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            showOptions(category);
+          });
+        });
+        
+        // Function to show options in modal
+        function showOptions(category) {
+          // Set modal title
+          modalTitle.textContent = categoryTitles[category] || "Options";
+          
+          // Clear previous options
+          optionList.innerHTML = '';
+          
+          // Add new options
+          categoryOptions[category].forEach(option => {
+            const listItem = document.createElement('li');
+            listItem.className = 'option-list-item';
+            listItem.innerHTML = `
+              <i class="${option.icon} option-list-icon"></i>
+              <span>${option.name}</span>
+            `;
+            optionList.appendChild(listItem);
+          });
+          
+          // Show modal
+          modalOverlay.classList.add('active');
+        }
+        
+        // Close modal when clicking close button
+        closeModal.addEventListener('click', function() {
+          modalOverlay.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', function(e) {
+          if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

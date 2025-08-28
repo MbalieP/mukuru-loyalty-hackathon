@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Statuses</title>
+    <title>Mukuru Rewards - Status Comparison</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="statusstyle.css" />
   </head>
   <body>
@@ -30,10 +38,10 @@
         <!-- Bronze Status -->
         <div class="status-card bronze">
           <div class="status-header">
-            <div class="status-icon">
+            <div class="status-icon bronze">
               <i class="fas fa-award"></i>
             </div>
-            <h2 class="status-name">Bronze</h2>
+            <h2 class="status-name bronze">Bronze</h2>
             <p class="status-description">
               Great starting point for new members
             </p>
@@ -42,7 +50,9 @@
             <p><i class="fas fa-check-circle"></i> Send money occasionally</p>
           </div>
           <div class="status-benefits">
-            <h3 class="benefit-title">Rewards & Benefits</h3>
+            <h3 class="benefit-title">
+              <i class="fas fa-gift"></i> Rewards & Benefits
+            </h3>
 
             <div class="benefit-item">
               <div class="benefit-icon">
@@ -75,7 +85,9 @@
             </div>
           </div>
           <div class="status-features">
-            <h3 class="feature-title">Spending Options</h3>
+            <h3 class="feature-title">
+              <i class="fas fa-tasks"></i> Spending Options
+            </h3>
             <ul class="feature-list">
               <li><i class="fas fa-check"></i> Airtime & Data</li>
               <li><i class="fas fa-check"></i> Electricity</li>
@@ -88,10 +100,10 @@
         <div class="status-card silver">
           <div class="current-status-badge">Your Current Status</div>
           <div class="status-header">
-            <div class="status-icon">
+            <div class="status-icon silver">
               <i class="fas fa-award"></i>
             </div>
-            <h2 class="status-name">Silver</h2>
+            <h2 class="status-name silver">Silver</h2>
             <p class="status-description">For consistent senders</p>
           </div>
           <div class="status-requirements">
@@ -101,7 +113,9 @@
             </p>
           </div>
           <div class="status-benefits">
-            <h3 class="benefit-title">Rewards & Benefits</h3>
+            <h3 class="benefit-title">
+              <i class="fas fa-gift"></i> Rewards & Benefits
+            </h3>
 
             <div class="benefit-item">
               <div class="benefit-icon">
@@ -144,7 +158,9 @@
             </div>
           </div>
           <div class="status-features">
-            <h3 class="feature-title">Spending Options</h3>
+            <h3 class="feature-title">
+              <i class="fas fa-tasks"></i> Spending Options
+            </h3>
             <ul class="feature-list">
               <li><i class="fas fa-check"></i> Airtime & Data</li>
               <li><i class="fas fa-check"></i> Electricity</li>
@@ -157,10 +173,10 @@
         <!-- Gold Status -->
         <div class="status-card gold">
           <div class="status-header">
-            <div class="status-icon">
+            <div class="status-icon gold">
               <i class="fas fa-award"></i>
             </div>
-            <h2 class="status-name">Gold</h2>
+            <h2 class="status-name gold">Gold</h2>
             <p class="status-description">For frequent senders</p>
           </div>
           <div class="status-requirements">
@@ -170,7 +186,9 @@
             </p>
           </div>
           <div class="status-benefits">
-            <h3 class="benefit-title">Rewards & Benefits</h3>
+            <h3 class="benefit-title">
+              <i class="fas fa-gift"></i> Rewards & Benefits
+            </h3>
 
             <div class="benefit-item">
               <div class="benefit-icon">
@@ -223,7 +241,9 @@
             </div>
           </div>
           <div class="status-features">
-            <h3 class="feature-title">Spending Options</h3>
+            <h3 class="feature-title">
+              <i class="fas fa-tasks"></i> Spending Options
+            </h3>
             <ul class="feature-list">
               <li><i class="fas fa-check"></i> Airtime & Data</li>
               <li><i class="fas fa-check"></i> Electricity</li>
@@ -260,11 +280,21 @@
           rewards
         </p>
         <button class="btn btn-primary">Send Money Now</button>
-    </div>
-    </div>
+      </div>
+
       <div class="card-footer">
         <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
       </div>
-    <script src="statusscript.js"></script>
+    </div>
+
+    <script>
+      // Simple animation for progress bar
+      document.addEventListener("DOMContentLoaded", function () {
+        const progressBar = document.querySelector(".progress-bar");
+        setTimeout(() => {
+          progressBar.style.width = "60%";
+        }, 300);
+      });
+    </script>
   </body>
 </html>
