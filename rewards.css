@@ -28,10 +28,62 @@ body {
   margin: 0;
   padding: 20px;
   min-height: 100vh;
+  color: var(--mukuru-text);
+}
+
+.main-content{
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--mukuru-text);
+  margin-left: 220px; 
+  padding: 20px;
+  flex: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: var(--mukuru-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.nav-item.active {
+  background: var(--mukuru-light);
+  color: var(--mukuru-primary);
+}
+
+.nav-item:hover:not(.active) {
+  background: rgba(255, 107, 0, 0.05);
+}
+
+.nav-icon {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
 }
 
 .mukuru-card {
