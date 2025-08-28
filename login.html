@@ -1,32 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
-    <style>
-        body { font-family: Arial; padding: 50px; }
-        input { margin: 5px 0; padding: 5px; width: 250px; }
-        button { padding: 5px 10px; }
-        .error { color: red; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script src="main.js" defer type="module"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f6f9;
+      margin: 0;
+    }
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .google-btn {
+      background: #db4437;
+      margin-top: 15px;
+    }
+    .google-btn:hover {
+      background: #c23321;
+    }
+    #error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <input type="text" id="cellphone" placeholder="Enter Cellphone (e.g. 0821234567)" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+      <button type="button" id="google-btn" onclick="googleSignIn()">Sign in with Google</button>
+      <p id="error"></p>
+    </form>
+  </div>
 
-<h2>Login</h2>
-<form id="loginForm">
-    <label>Username:</label><br>
-    <input type="text" id="username" required><br>
+  <script>
+    const form = document.getElementById("loginForm");
+    const error = document.getElementById("error");
 
-    <label>Password:</label><br>
-    <input type="password" id="password" required><br>
+    // Cellphone validation
+    function isValidCellphone(cell) {
+      const regex = /^0\d{9}$/;
+      return regex.test(cell);
+    }
 
-    <label>Cellphone:</label><br>
-    <input type="text" id="cellphone" placeholder="e.g., 0712345678" required><br>
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const cellphone = document.getElementById("cellphone").value;
+      const password = document.getElementById("password").value;
 
-    <button type="submit">Login</button>
-</form>
+      if (!isValidCellphone(cellphone)) {
+        error.textContent = "Cellphone must be 10 digits and start with 0.";
+        return;
+      }
 
-<p id="error" class="error"></p>
-
-<script src="login.js"></script>
+      error.textContent = "";
+      alert(`✅ Login attempt with:\nEmail: ${email}\nCellphone: ${cellphone}`);
+    });
+  </script>
 </body>
 </html>
