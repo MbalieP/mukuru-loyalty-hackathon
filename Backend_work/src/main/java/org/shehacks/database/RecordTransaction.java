@@ -35,8 +35,8 @@ public class RecordTransaction {
         historyDAI.addTransaction(historyDO);
     }
 
-    public static List<HistoryDO> getTransactionHistory(HistoryDAI historyDAI,Customer customer){
-        List<HistoryDO> customerHistory = historyDAI.getCustomerTransactionHistory(customer.getCellphone());
+    public static List<HistoryDO> getTransactionHistory(HistoryDAI historyDAI,String cellphone){
+        List<HistoryDO> customerHistory = historyDAI.getCustomerTransactionHistory(cellphone);
         return customerHistory;
     }
 
@@ -44,6 +44,7 @@ public class RecordTransaction {
         List<HistoryDO> allTransactionHistory = historyDAI.getTransactionHistory();
         return allTransactionHistory;
     }
+
 
 
 }
