@@ -6,13 +6,15 @@ import static java.sql.DriverManager.getConnection;
 
 public class Database {
 
-    public static void connectDatabase(String DISK_DB_URL) {
+    private static final String DISK_DB_URL = "jdbc:sqlite:transaction_history.db";
+
+    public static void connectDatabase() {
         try (final Connection connection = DriverManager.getConnection(DISK_DB_URL)) {
             System.out.println("Connected to database ");
             createTable(connection);
 
         } catch ( SQLException e ) {
-            System.err.println( e.getMessage() );
+            System.err.println( e.getMessage());
         }
     }
 
