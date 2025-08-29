@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mukuru Landing page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="landingstyles.css" />
   </head>
   <body>
@@ -52,7 +56,7 @@
         <div class="welcome-banner">
           <div class="welcome-text">
             <h2>Welcome back, Mbali!</h2>
-            <p>You've earned 30 points this month. Keep it up!</p>
+            <p>You've earned 30 Zakas this month. Keep it up!</p>
           </div>
           <div class="status-badge">
             <i class="fas fa-crown"></i>
@@ -68,14 +72,14 @@
               style="font-size: 24px; color: var(--mukuru-primary)"
             ></i>
             <div class="stat-value">300</div>
-            <div class="stat-label">Points Balance</div>
+            <div class="stat-label">Zaka Balance</div>
           </div>
           <div class="stat-card">
             <i
               class="fas fa-exchange-alt"
               style="font-size: 24px; color: var(--mukuru-primary)"
             ></i>
-            <div class="stat-value">12</div>
+            <div class="stat-value">7</div>
             <div class="stat-label">Transactions</div>
           </div>
           <div class="stat-card">
@@ -95,26 +99,40 @@
             <a href="#" class="view-all">View all rewards</a>
           </div>
 
-          <div class="progress-container">
-            <div class="progress-bar"></div>
+          <!-- Progress Ring -->
+          <div class="progress-ring-container">
+            <div class="progress-ring">
+              <div class="progress-ring-bg"></div>
+              <div class="progress-ring-circle" id="progressCircle"></div>
+              <div class="progress-ring-overlay">
+                <div class="progress-ring-text" id="pointsText">300</div>
+                <div class="progress-ring-subtext">of 500 Zakas</div>
+              </div>
+            </div>
           </div>
 
           <div class="progress-text">
-            <span>300 points</span>
+            <span id="progressPercentage">60% complete</span>
           </div>
 
           <div class="points-display">
-            <div class="point earned">50</div>
             <div class="point earned">100</div>
-            <div class="point">150</div>
-            <div class="point">200</div>
-            <div class="point">250</div>
+            <div class="point earned">200</div>
+            <div class="point earned">300</div>
+            <div class="point">400</div>
+            <div class="point">
+              <i class="fas fa-gift gift-icon"></i>
+            </div>
           </div>
 
-          <p style="text-align: center; color: #666; margin-top: 10px">
-            Send money at least once a month to maintain your Silver status
+          <p class="reward-message">
+            Reach 500 Zaka's to unlock your SURPRISE reward!
           </p>
         </div>
+
+        <p style="text-align: center; color: #666; margin-top: 10px">
+          Send money at least once a month to maintain your Silver status
+        </p>
 
         <!-- Actions Grid -->
         <div class="actions-grid">
@@ -126,7 +144,7 @@
             <p class="action-description">
               Transfer money to friends and family instantly
             </p>
-            <button id= "send-now" class="btn btn-primary">Send Now</button>
+            <button id="send-now" class="btn btn-primary">Send Now</button>
           </div>
 
           <div class="action-card">
@@ -135,9 +153,11 @@
             </div>
             <h3 class="action-title">Explore Rewards</h3>
             <p class="action-description">
-              Redeem your points for exciting rewards
+              Redeem your Mukuru Zakas for exciting rewards
             </p>
-            <button id= "view-rewards" class="btn btn-outline">View Rewards</button>
+            <button id="view-rewards" class="btn btn-outline">
+              View Rewards
+            </button>
           </div>
         </div>
 
@@ -158,7 +178,7 @@
                 <p>Today, 10:23 AM</p>
               </div>
             </div>
-            <div class="transaction-amount">+15 pts</div>
+            <div class="transaction-amount">+15 zk</div>
           </div>
 
           <div class="transaction-item">
@@ -171,7 +191,7 @@
                 <p>Aug 1, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">+15 pts</div>
+            <div class="transaction-amount">+15 zk</div>
           </div>
 
           <div class="transaction-item">
@@ -184,7 +204,7 @@
                 <p>Jul 12, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">-50 pts</div>
+            <div class="transaction-amount">-50 zk</div>
           </div>
 
           <div class="transaction-item" style="border-bottom: none">
@@ -197,7 +217,7 @@
                 <p>Jul 5, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">-75 pts</div>
+            <div class="transaction-amount">-75 zk</div>
           </div>
         </div>
       </main>
@@ -205,9 +225,33 @@
     <div class="card-footer">
       <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
     </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+      <div class="mobile-nav-progress" id="mobileNavProgress"></div>
+      <div class="mobile-nav-items">
+        <a href="#" class="mobile-nav-item active">
+          <div class="mobile-nav-icon"><i class="fas fa-home"></i></div>
+          <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+          <div class="mobile-nav-icon"><i class="fas fa-exchange-alt"></i></div>
+          <span>Send</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+          <div class="mobile-nav-icon"><i class="fas fa-gift"></i></div>
+          <span>Rewards</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+          <div class="mobile-nav-icon"><i class="fas fa-history"></i></div>
+          <span>History</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+          <div class="mobile-nav-icon"><i class="fas fa-user"></i></div>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
     <script src="landingscript.js" defer></script>
-  
-
-
   </body>
 </html>

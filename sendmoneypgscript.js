@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
       pointsEarned.textContent =
         "Earned " +
         earnedPoints +
-        " points! Total: " +
+        " Zakas! Total: " +
         currentPoints +
-        " points";
+        " Zakas";
 
       successMessage.style.display = "block";
       errorMessage.style.display = "none";

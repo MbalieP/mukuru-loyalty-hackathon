@@ -8,271 +8,307 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="rewards.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <a href="#" id="home" class="nav-item active">
-        <div class="nav-icon"><i class="fas fa-home"></i></div>
-        <span>Home</span>
-      </a>
-      <a href="#" id="send-money" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-exchange-alt"></i></div>
-        <span>Send Money</span>
-      </a>
-      <a href="#" id="explore-statuses" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-gift"></i></div>
-        <span>Status Badges</span>
-      </a>
-      <a href="#" id="history" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-history"></i></div>
-        <span>Transaction History</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-user"></i></div>
-        <span>Profile Settings</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
-        <span>Help & Support</span>
-      </a>
-    </aside>
-
-    <main class="main-content">
-      <div class="mukuru-card">
-        <div class="card-header">
-          <h1>Mukuru<span>Rewards</span></h1>
-          <p>Elevate your financial experience</p>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">Mukuru<span>Rewards</span></div>
+        <div class="user-profile">
+          <div class="user-avatar">M</div>
+          <div class="user-info">
+            <h3>Mbali</h3>
+            <p>Silver Member</p>
+          </div>
         </div>
+      </header>
 
-        <div class="card-content">
-          <div class="status-card">
-            <div class="status-title">
-              <div class="status-icon">
-                <i class="fas fa-crown"></i>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a href="#" id="home" class="nav-item active">
+          <div class="nav-icon"><i class="fas fa-home"></i></div>
+          <span>Home</span>
+        </a>
+        <a href="#" id="send-money" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-exchange-alt"></i></div>
+          <span>Send Money</span>
+        </a>
+        <a href="#" id="explore-statuses" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-gift"></i></div>
+          <span>Status Badges</span>
+        </a>
+        <a href="#" id="history" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-history"></i></div>
+          <span>Transaction History</span>
+        </a>
+        <a href="#" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-user"></i></div>
+          <span>Profile Settings</span>
+        </a>
+        <a href="#" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
+          <span>Help & Support</span>
+        </a>
+      </aside>
+
+      <!-- Overlay for mobile sidebar -->
+      <div class="overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="mukuru-card">
+          <div class="card-header">
+            <h1>Mukuru<span>Rewards</span></h1>
+            <p>Elevate your financial experience</p>
+          </div>
+
+          <div class="card-content">
+            <div class="status-card">
+              <div class="status-title">
+                <div class="status-icon">
+                  <i class="fas fa-crown"></i>
+                </div>
+                <h2 class="status-name">Silver Status</h2>
               </div>
-              <h2 class="status-name">Silver Status</h2>
+
+              <div class="progress-container">
+                <div class="progress-bar"></div>
+              </div>
+
+              <div class="progress-text">
+                <span></span>
+                <span>500 Zakas</span>
+              </div>
+
+              <div class="status-info">
+                <h3>
+                  <i class="fas fa-info-circle"></i> How to maintain your status
+                </h3>
+                <p>
+                  Send money at least once a month to maintain your Silver
+                  status and unlock exclusive rewards.
+                </p>
+              </div>
             </div>
 
-            <div class="progress-container">
-              <div class="progress-bar"></div>
+            <div class="options-section">
+              <h2 class="section-title">Spending Options</h2>
+
+              <div class="options-grid">
+                <div class="option-item" data-category="airtime">
+                  <div class="option-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <p class="option-text">Airtime & Data</p>
+                </div>
+
+                <div class="option-item" data-category="electricity">
+                  <div class="option-icon">
+                    <i class="fas fa-bolt"></i>
+                  </div>
+                  <p class="option-text">Electricity</p>
+                </div>
+
+                <div class="option-item" data-category="bus">
+                  <div class="option-icon">
+                    <i class="fas fa-bus"></i>
+                  </div>
+                  <p class="option-text">Bus Tickets</p>
+                </div>
+
+                <div class="option-item" data-category="vouchers">
+                  <div class="option-icon">
+                    <i class="fas fa-gift"></i>
+                  </div>
+                  <p class="option-text">Vouchers</p>
+                </div>
+              </div>
             </div>
 
-            <div class="progress-text">
-              <span>300 points</span>
-              <span>500 points for Gold</span>
+            <div class="points-display">
+              <div class="point earned">100</div>
+              <div class="point earned">200</div>
+              <div class="point earned">300</div>
+              <div class="point">400</div>
+              <div class="point">
+              <i class="fas fa-gift gift-icon"></i>
             </div>
-
-            <div class="status-info">
-              <h3>
-                <i class="fas fa-info-circle"></i> How to maintain your status
-              </h3>
-              <p>
-                Send money at least once a month to maintain your Silver status
-                and unlock exclusive rewards.
-              </p>
             </div>
           </div>
 
-          <div class="options-section">
-            <h2 class="section-title">Spending Options</h2>
+          <div class="card-footer">
+            <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
+          </div>
+        </div>
 
-            <div class="options-grid">
-              <div class="option-item" data-category="airtime">
-                <div class="option-icon">
-                  <i class="fas fa-mobile-alt"></i>
-                </div>
-                <p class="option-text">Airtime & Data</p>
-              </div>
-
-              <div class="option-item" data-category="electricity">
-                <div class="option-icon">
-                  <i class="fas fa-bolt"></i>
-                </div>
-                <p class="option-text">Electricity</p>
-              </div>
-
-              <div class="option-item" data-category="bus">
-                <div class="option-icon">
-                  <i class="fas fa-bus"></i>
-                </div>
-                <p class="option-text">Bus Tickets</p>
-              </div>
-
-              <div class="option-item" data-category="vouchers">
-                <div class="option-icon">
-                  <i class="fas fa-gift"></i>
-                </div>
-                <p class="option-text">Vouchers</p>
-              </div>
+        <!-- Modal for displaying options -->
+        <div class="modal-overlay" id="modalOverlay">
+          <div class="modal">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modalTitle">Options</h3>
+              <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-content">
+              <ul class="option-list" id="optionList">
+                <!-- Options will be dynamically inserted here -->
+              </ul>
             </div>
           </div>
-
-          <div class="points-display">
-            <div class="point earned">50</div>
-            <div class="point earned">100</div>
-            <div class="point">150</div>
-            <div class="point">200</div>
-            <div class="point">250</div>
-          </div>
         </div>
+      </main>
+    </div>
 
-        <div class="card-footer">
-          <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
-        </div>
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-items">
+        <a href="landingpage.html" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-home"></i></div>
+          <span>Home</span>
+        </a>
+        <a href="sendmoneypage.html" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-exchange-alt"></i></div>
+          <span>Send</span>
+        </a>
+        <a href="#" class="bottom-nav-item active">
+          <div class="bottom-nav-icon"><i class="fas fa-gift"></i></div>
+          <span>Status</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-history"></i></div>
+          <span>History</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-user"></i></div>
+          <span>Profile</span>
+        </a>
       </div>
+    </nav>
 
-      <!-- Modal for displaying options -->
-      <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modalTitle">Options</h3>
-            <button class="close-modal" id="closeModal">&times;</button>
-          </div>
-          <div class="modal-content">
-            <ul class="option-list" id="optionList">
-              <!-- Options will be dynamically inserted here -->
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="mobile-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          // Dashboard → go to landingpage.html 
-            document
-            .getElementById("home")
-            .addEventListener("click", (e) => {
-              e.preventDefault();
-              window.location.href = "landingpage.html";
-            });
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Dashboard → go to landingpage.html
+        document.getElementById("home").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "landingpage.html";
+        });
 
-          // Send Money → go to sendmoneypage.html
-          document
-            .getElementById("send-money")
-            .addEventListener("click", (e) => {
-              e.preventDefault();
-              window.location.href = "sendmoneypage.html";
-            });
+        // Send Money → go to sendmoneypage.html
+        document.getElementById("send-money").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "sendmoneypage.html";
+        });
 
-          document
-            .getElementById("explore-statuses")
-            .addEventListener("click", (e) => {
-              e.preventDefault();
-              window.location.href = "statuses.html";
-            });
-
-          // Transaction History → scroll to bottom
-          document.getElementById("history").addEventListener("click", (e) => {
+        document
+          .getElementById("explore-statuses")
+          .addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "landingpage.html";
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: "smooth",
-            });
+            window.location.href = "statuses.html";
           });
 
-          // Send Money → go to sendmoneypage.html
-          document.getElementById("send-now").addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.href = "sendmoneypage.html";
+        // Transaction History → scroll to bottom
+        document.getElementById("history").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "landingpage.html";
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
           });
         });
+
         // Simple animation for progress bar
-        document.addEventListener("DOMContentLoaded", function () {
-          const progressBar = document.querySelector(".progress-bar");
-          setTimeout(() => {
-            progressBar.style.width = "60%";
-          }, 300);
+        const progressBar = document.querySelector(".progress-bar");
+        setTimeout(() => {
+          progressBar.style.width = "60%";
+        }, 300);
 
-          // Add click event listeners to option items
-          const optionItems = document.querySelectorAll(".option-item");
-          const modalOverlay = document.getElementById("modalOverlay");
-          const modalTitle = document.getElementById("modalTitle");
-          const optionList = document.getElementById("optionList");
-          const closeModal = document.getElementById("closeModal");
+        // Add click event listeners to option items
+        const optionItems = document.querySelectorAll(".option-item");
+        const modalOverlay = document.getElementById("modalOverlay");
+        const modalTitle = document.getElementById("modalTitle");
+        const optionList = document.getElementById("optionList");
+        const closeModal = document.getElementById("closeModal");
 
-          // Define options for each category
-          const categoryOptions = {
-            airtime: [
-              { name: "R50 Airtime", icon: "fas fa-signal" },
-              { name: "100mb Data", icon: "fas fa-signal" },
-              { name: "R100 Airtime", icon: "fas fa-signal" },
-              { name: "200mb", icon: "fas fa-signal" },
-            ],
-            electricity: [
-              { name: "R50 Electricity Token", icon: "fas fa-bolt" },
-              { name: "R100 Electricity Token", icon: "fas fa-bolt" },
-            ],
-            bus: [
-              { name: "10% Greyhound bus Tickets", icon: "fas fa-bus" },
-              { name: "10% Tamuka busTickets", icon: "fas fa-bus" },
-              { name: "10% Shalom bus Tickets", icon: "fas fa-bus" },
-              { name: "10% Ulemu bus Tickets", icon: "fas fa-bus" },
-            ],
-            vouchers: [
-              { name: "R100 pep Voucher", icon: "fas fa-shopping-cart" },
-              { name: "R100 Shoprite Voucher", icon: "fas fa-shopping-basket" },
-              { name: "R100 OTT Voucher", icon: "fas fa-tv" },
-            ],
-          };
+        // Define options for each category
+        const categoryOptions = {
+          airtime: [
+            { name: "R50 Airtime", icon: "fas fa-signal" },
+            { name: "100mb Data", icon: "fas fa-signal" },
+            { name: "R100 Airtime", icon: "fas fa-signal" },
+            { name: "200mb", icon: "fas fa-signal" },
+          ],
+          electricity: [
+            { name: "R50 Electricity Token", icon: "fas fa-bolt" },
+            { name: "R100 Electricity Token", icon: "fas fa-bolt" },
+          ],
+          bus: [
+            { name: "10% Greyhound bus Tickets", icon: "fas fa-bus" },
+            { name: "10% Tamuka busTickets", icon: "fas fa-bus" },
+            { name: "10% Shalom bus Tickets", icon: "fas fa-bus" },
+            { name: "10% Ulemu bus Tickets", icon: "fas fa-bus" },
+          ],
+          vouchers: [
+            { name: "R100 pep Voucher", icon: "fas fa-shopping-cart" },
+            { name: "R100 Shoprite Voucher", icon: "fas fa-shopping-basket" },
+            { name: "R100 OTT Voucher", icon: "fas fa-tv" },
+          ],
+        };
 
-          // Category titles
-          const categoryTitles = {
-            airtime: "Airtime & Data Options",
-            electricity: "Electricity Providers",
-            bus: "Bus Ticket Options",
-            vouchers: "Voucher Options",
-          };
+        // Category titles
+        const categoryTitles = {
+          airtime: "Airtime & Data Options",
+          electricity: "Electricity Providers",
+          bus: "Bus Ticket Options",
+          vouchers: "Voucher Options",
+        };
 
-          // Add click event to each option item
-          optionItems.forEach((item) => {
-            item.addEventListener("click", function () {
-              const category = this.getAttribute("data-category");
-              showOptions(category);
-            });
+        // Add click event to each option item
+        optionItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const category = this.getAttribute("data-category");
+            showOptions(category);
           });
+        });
 
-          // Function to show options in modal
-          function showOptions(category) {
-            // Set modal title
-            modalTitle.textContent = categoryTitles[category] || "Options";
+        // Function to show options in modal
+        function showOptions(category) {
+          // Set modal title
+          modalTitle.textContent = categoryTitles[category] || "Options";
 
-            // Clear previous options
-            optionList.innerHTML = "";
+          // Clear previous options
+          optionList.innerHTML = "";
 
-            // Add new options
-            categoryOptions[category].forEach((option) => {
-              const listItem = document.createElement("li");
-              listItem.className = "option-list-item";
-              listItem.innerHTML = `
+          // Add new options
+          categoryOptions[category].forEach((option) => {
+            const listItem = document.createElement("li");
+            listItem.className = "option-list-item";
+            listItem.innerHTML = `
               <i class="${option.icon} option-list-icon"></i>
               <span>${option.name}</span>
             `;
-              optionList.appendChild(listItem);
-            });
-
-            // Show modal
-            modalOverlay.classList.add("active");
-          }
-
-          // Close modal when clicking close button
-          closeModal.addEventListener("click", function () {
-            modalOverlay.classList.remove("active");
+            optionList.appendChild(listItem);
           });
 
-          // Close modal when clicking outside
-          modalOverlay.addEventListener("click", function (e) {
-            if (e.target === modalOverlay) {
-              modalOverlay.classList.remove("active");
-            }
-          });
+          // Show modal
+          modalOverlay.classList.add("active");
+        }
+
+        // Close modal when clicking close button
+        closeModal.addEventListener("click", function () {
+          modalOverlay.classList.remove("active");
         });
-      </script>
-    </main>
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener("click", function (e) {
+          if (e.target === modalOverlay) {
+            modalOverlay.classList.remove("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
