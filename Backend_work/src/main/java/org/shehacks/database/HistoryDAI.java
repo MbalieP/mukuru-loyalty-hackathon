@@ -12,7 +12,13 @@ public interface HistoryDAI extends BaseQuery {
             "SELECT id, cellphone, amount, date, points, status "
             +"FROM history WHERE history.cellphone = ?{1}"
     )
-    List<HistoryDO> getTransactionHistory(String cellphone);
+    List<HistoryDO> getCustomerTransactionHistory(String cellphone);
+
+    @Select(
+            "SELECT id, cellphone, amount, date, points, status "
+                    +"FROM history"
+    )
+    List<HistoryDO> getTransactionHistory();
 
     @Update(
             "INSERT INTO history (cellphone, amount, date, points, status) "
