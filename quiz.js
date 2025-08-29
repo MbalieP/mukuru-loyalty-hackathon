@@ -1,14 +1,35 @@
 export function startQuiz(container) {
   const questions = [
-    { question: "Capital of South Africa?", options: ["Pretoria","Johannesburg","Cape Town","Durban"], answer:"Pretoria" },
-    { question: "National animal?", options: ["Springbok","Lion","Elephant","Rooibok"], answer:"Springbok" },
-    { question: "National flower?", options: ["Protea","Rose","Lily","Orchid"], answer:"Protea" },
-    { question: "Ocean to the south?", options: ["Indian","Atlantic","Southern","Pacific"], answer:"Indian" },
-    { question: "First democratic president in 1994?", options: ["Nelson Mandela","Thabo Mbeki","Cyril Ramaphosa","FW de Klerk"], answer:"Nelson Mandela" },
-    { question: "Largest city?", options: ["Cape Town","Durban","Johannesburg","Pretoria"], answer:"Johannesburg" }
+    // Mukuru-themed questions
+    { 
+      question: "What service does Mukuru primarily offer?", 
+      options: ["Online Shopping","Money Transfers","Ride Hailing","Food Delivery"], 
+      answer: "Money Transfers" 
+    },
+    { 
+      question: "Which continent does Mukuru mainly operate in?", 
+      options: ["Asia","Europe","Africa","South America"], 
+      answer: "Africa" 
+    },
+    { 
+      question: "Mukuru allows users to send money to?", 
+      options: ["Family and Friends","Companies only","Banks only","Government"], 
+      answer: "Family and Friends" 
+    },
+    { 
+      question: "Mukuru transactions can be picked up in?", 
+      options: ["Only in South Africa","Multiple countries in Africa","Anywhere in the world","Online only"], 
+      answer: "Multiple countries in Africa" 
+    },
+    // Bonus South Africa question
+    { 
+      question: "Which city is known as the largest economic hub in South Africa?", 
+      options: ["Cape Town","Johannesburg","Durban","Pretoria"], 
+      answer: "Johannesburg" 
+    }
   ];
 
-  // Pick 4 random questions
+  // Pick 4 random questions from the array
   function getRandomQuestions(arr, n) {
     let shuffled = [...arr].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, n);
@@ -19,8 +40,8 @@ export function startQuiz(container) {
   container.innerHTML = `
     <div class="mukuru-card">
       <div class="card-header">
-        <h1>South Africa Quiz</h1>
-        <p>Answer the questions to succeed! 🇿🇦</p>
+        <h1>Mukuru Quiz</h1>
+        <p>Answer the questions to succeed! 💰</p>
       </div>
       <div class="card-content">
         <div class="progress-container">
@@ -68,40 +89,40 @@ export function startQuiz(container) {
   showQuestion();
 
   form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const selected = container.querySelector('input[name="answer"]:checked');
-  if (!selected) return alert("Please select an answer.");
+    e.preventDefault();
+    const selected = container.querySelector('input[name="answer"]:checked');
+    if (!selected) return alert("Please select an answer.");
 
-  if (selected.value === selectedQuestions[currentQuestion].answer) score++;
+    if (selected.value === selectedQuestions[currentQuestion].answer) score++;
 
-  currentQuestion++;
+    currentQuestion++;
 
-  if (currentQuestion < selectedQuestions.length) {
-    showQuestion();
-  } else {
-    progressBar.style.width = '100%';
-
-    const percentCorrect = (score / selectedQuestions.length) * 100;
-    let pointsEarned = 0;
-
-    if (percentCorrect === 100) {
-      pointsEarned = 2;
-      resultEl.textContent = `🎉 Perfect! You got all ${score}/${selectedQuestions.length} correct! +2 points`;
-    } else if (percentCorrect >= 70) {
-      pointsEarned = 1;
-      resultEl.textContent = `🎉 Good job! You got ${score}/${selectedQuestions.length} correct! +1 point`;
+    if (currentQuestion < selectedQuestions.length) {
+      showQuestion();
     } else {
-      pointsEarned = 0;
-      resultEl.textContent = `❌ You got ${score}/${selectedQuestions.length} correct. 0 points`;
+      progressBar.style.width = '100%';
+
+      const percentCorrect = (score / selectedQuestions.length) * 100;
+      let pointsEarned = 0;
+
+      if (percentCorrect === 100) {
+        pointsEarned = 2;
+        resultEl.textContent = `🎉 Perfect! You got all ${score}/${selectedQuestions.length} correct! +2 points`;
+      } else if (percentCorrect >= 70) {
+        pointsEarned = 1;
+        resultEl.textContent = `🎉 Good job! You got ${score}/${selectedQuestions.length} correct! +1 point`;
+      } else {
+        pointsEarned = 0;
+        resultEl.textContent = `❌ You got ${score}/${selectedQuestions.length} correct. 0 points`;
+      }
+
+      containerEl.innerHTML = "";
+      form.querySelector('button').style.display = 'none';
+
+      // Redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = "landingpage.html";
+      }, 2000);
     }
-
-    containerEl.innerHTML = "";
-    form.querySelector('button').style.display = 'none';
-
-    // Redirect after 2 seconds
-    setTimeout(() => {
-      window.location.href = "landingpage.html";
-    }, 2000);
-  }
-});
+  });
 }
