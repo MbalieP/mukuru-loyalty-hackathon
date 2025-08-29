@@ -4,50 +4,324 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Status Comparison</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="statusstyle.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <a href="#" id="home" class="nav-item active">
-        <div class="nav-icon"><i class="fas fa-home"></i></div>
-        <span>Home</span>
-      </a>
-      <a href="#" id="send-money" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-exchange-alt"></i></div>
-        <span>Send Money</span>
-      </a>
-      <a href="#" id="history" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-history"></i></div>
-        <span>Transaction History</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-user"></i></div>
-        <span>Profile Settings</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
-        <span>Help & Support</span>
-      </a>
-    </aside>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">Mukuru<span>Rewards</span></div>
+        <div class="user-profile">
+          <div class="user-avatar">M</div>
+          <div class="user-info">
+            <h3>Mbali</h3>
+            <p>Silver Member</p>
+          </div>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <a href="#" id="dashboard" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-home"></i></div>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" id="send-money" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-exchange-alt"></i></div>
+          <span>Send Money</span>
+        </a>
+        <a href="#" id="explore-statuses" class="nav-item active">
+          <div class="nav-icon"><i class="fas fa-gift"></i></div>
+          <span>Status Badges</span>
+        </a>
+        <a href="#" id="history" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-history"></i></div>
+          <span>Transaction History</span>
+        </a>
+        <a href="#" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-user"></i></div>
+          <span>Profile Settings</span>
+        </a>
+        <a href="#" class="nav-item">
+          <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
+          <span>Help & Support</span>
+        </a>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Page Title -->
+        <div class="page-title">
+          <h1>Rewards Status Comparison</h1>
+          <p>
+            See the benefits of each status level and how to unlock more rewards
+          </p>
+        </div>
+
+        <!-- Status Comparison -->
+        <div class="status-comparison">
+          <!-- Bronze Status -->
+          <div class="status-card bronze">
+            <div class="status-header">
+              <div class="status-icon bronze">
+                <i class="fas fa-award"></i>
+              </div>
+              <h2 class="status-name bronze">Bronze</h2>
+              <p class="status-description">
+                Great starting point for new members
+              </p>
+            </div>
+            <div class="status-requirements">
+              <p><i class="fas fa-check-circle"></i> Send money occasionally</p>
+            </div>
+            <div class="status-benefits">
+              <h3 class="benefit-title">
+                <i class="fas fa-gift"></i> Rewards & Benefits
+              </h3>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Bus Tickets</div>
+                  <div class="benefit-value">5% discount</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Airtime</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Electricity</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+            </div>
+            <div class="status-features">
+              <h3 class="feature-title">
+                <i class="fas fa-tasks"></i> Spending Options
+              </h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Airtime & Data</li>
+                <li><i class="fas fa-check"></i> Electricity</li>
+                <li><i class="fas fa-check"></i> Bus Tickets</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Silver Status -->
+          <div class="status-card silver">
+            <div class="current-status-badge">Your Current Status</div>
+            <div class="status-header">
+              <div class="status-icon silver">
+                <i class="fas fa-award"></i>
+              </div>
+              <h2 class="status-name silver">Silver</h2>
+              <p class="status-description">For consistent senders</p>
+            </div>
+            <div class="status-requirements">
+              <p>
+                <i class="fas fa-check-circle"></i> Send money at least once a
+                month
+              </p>
+            </div>
+            <div class="status-benefits">
+              <h3 class="benefit-title">
+                <i class="fas fa-gift"></i> Rewards & Benefits
+              </h3>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Bus Tickets</div>
+                  <div class="benefit-value">10% discount</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Airtime</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Electricity</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Mystery Box</div>
+                  <div class="benefit-value">Unlock at 500 points</div>
+                </div>
+              </div>
+            </div>
+            <div class="status-features">
+              <h3 class="feature-title">
+                <i class="fas fa-tasks"></i> Spending Options
+              </h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Airtime & Data</li>
+                <li><i class="fas fa-check"></i> Electricity</li>
+                <li><i class="fas fa-check"></i> Bus Tickets</li>
+                <li><i class="fas fa-check"></i> Vouchers</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Gold Status -->
+          <div class="status-card gold">
+            <div class="status-header">
+              <div class="status-icon gold">
+                <i class="fas fa-award"></i>
+              </div>
+              <h2 class="status-name gold">Gold</h2>
+              <p class="status-description">For frequent senders</p>
+            </div>
+            <div class="status-requirements">
+              <p>
+                <i class="fas fa-check-circle"></i> Send money frequently each
+                month
+              </p>
+            </div>
+            <div class="status-benefits">
+              <h3 class="benefit-title">
+                <i class="fas fa-gift"></i> Rewards & Benefits
+              </h3>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bus"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Bus Tickets</div>
+                  <div class="benefit-value">20% discount</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Airtime</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Electricity</div>
+                  <div class="benefit-value">Standard rates</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Mystery Box</div>
+                  <div class="benefit-value">Unlock at 500 points</div>
+                </div>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="benefit-info">
+                  <div class="benefit-name">Spin the Wheel</div>
+                  <div class="benefit-value">Chance to win big</div>
+                </div>
+              </div>
+            </div>
+            <div class="status-features">
+              <h3 class="feature-title">
+                <i class="fas fa-tasks"></i> Spending Options
+              </h3>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Airtime & Data</li>
+                <li><i class="fas fa-check"></i> Electricity</li>
+                <li><i class="fas fa-check"></i> Bus Tickets</li>
+                <li><i class="fas fa-check"></i> Vouchers</li>
+                <li><i class="fas fa-check"></i> Gift Cards</li>
+                <li><i class="fas fa-check"></i> Movie Tickets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+          <h2 class="progress-title">Your Progress to Gold Status</h2>
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress-text">
+            <span>300 points</span>
+            <span>500 points for Gold</span>
+          </div>
+          <p>
+            You're 60% of the way to Gold status! Keep sending money to unlock
+            more rewards.
+          </p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+          <h2 class="cta-title">Ready to Upgrade Your Status?</h2>
+          <p class="cta-description">
+            Send money more frequently to unlock higher status levels and better
+            rewards
+          </p>
+          <button class="btn btn-primary">Send Money Now</button>
+        </div>
+      </main>
+    </div>
 
     <!-- Bottom Navigation for Mobile -->
     <nav class="bottom-nav">
       <div class="bottom-nav-items">
-        <a href="#" class="bottom-nav-item active">
+        <a href="landingpage.html" class="bottom-nav-item">
           <div class="bottom-nav-icon"><i class="fas fa-home"></i></div>
           <span>Home</span>
         </a>
-        <a href="#" class="bottom-nav-item">
+        <a href="sendmoneypage.html" class="bottom-nav-item">
           <div class="bottom-nav-icon"><i class="fas fa-exchange-alt"></i></div>
           <span>Send</span>
+        </a>
+        <a href="#" class="bottom-nav-item active">
+          <div class="bottom-nav-icon"><i class="fas fa-gift"></i></div>
+          <span>Status</span>
         </a>
         <a href="#" class="bottom-nav-item">
           <div class="bottom-nav-icon"><i class="fas fa-history"></i></div>
@@ -64,290 +338,16 @@
       <i class="fas fa-bars"></i>
     </div>
 
-    <div class="container">
-      <!-- Header -->
-      <header>
-        <div class="logo">Mukuru<span>Rewards</span></div>
-      </header>
-
-      <!-- Page Title -->
-      <div class="page-title">
-        <h1>Rewards Status Comparison</h1>
-        <p>
-          See the benefits of each status level and how to unlock more rewards
-        </p>
-      </div>
-
-      <!-- Status Comparison -->
-      <div class="status-comparison">
-        <!-- Bronze Status -->
-        <div class="status-card bronze">
-          <div class="status-header">
-            <div class="status-icon bronze">
-              <i class="fas fa-award"></i>
-            </div>
-            <h2 class="status-name bronze">Bronze</h2>
-            <p class="status-description">
-              Great starting point for new members
-            </p>
-          </div>
-          <div class="status-requirements">
-            <p><i class="fas fa-check-circle"></i> Send money occasionally</p>
-          </div>
-          <div class="status-benefits">
-            <h3 class="benefit-title">
-              <i class="fas fa-gift"></i> Rewards & Benefits
-            </h3>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bus"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Bus Tickets</div>
-                <div class="benefit-value">5% discount</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Airtime</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Electricity</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-          </div>
-          <div class="status-features">
-            <h3 class="feature-title">
-              <i class="fas fa-tasks"></i> Spending Options
-            </h3>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Airtime & Data</li>
-              <li><i class="fas fa-check"></i> Electricity</li>
-              <li><i class="fas fa-check"></i> Bus Tickets</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Silver Status -->
-        <div class="status-card silver">
-          <div class="current-status-badge">Your Current Status</div>
-          <div class="status-header">
-            <div class="status-icon silver">
-              <i class="fas fa-award"></i>
-            </div>
-            <h2 class="status-name silver">Silver</h2>
-            <p class="status-description">For consistent senders</p>
-          </div>
-          <div class="status-requirements">
-            <p>
-              <i class="fas fa-check-circle"></i> Send money at least once a
-              month
-            </p>
-          </div>
-          <div class="status-benefits">
-            <h3 class="benefit-title">
-              <i class="fas fa-gift"></i> Rewards & Benefits
-            </h3>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bus"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Bus Tickets</div>
-                <div class="benefit-value">10% discount</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Airtime</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Electricity</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-gift"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Mystery Box</div>
-                <div class="benefit-value">Unlock at 500 points</div>
-              </div>
-            </div>
-          </div>
-          <div class="status-features">
-            <h3 class="feature-title">
-              <i class="fas fa-tasks"></i> Spending Options
-            </h3>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Airtime & Data</li>
-              <li><i class="fas fa-check"></i> Electricity</li>
-              <li><i class="fas fa-check"></i> Bus Tickets</li>
-              <li><i class="fas fa-check"></i> Vouchers</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Gold Status -->
-        <div class="status-card gold">
-          <div class="status-header">
-            <div class="status-icon gold">
-              <i class="fas fa-award"></i>
-            </div>
-            <h2 class="status-name gold">Gold</h2>
-            <p class="status-description">For frequent senders</p>
-          </div>
-          <div class="status-requirements">
-            <p>
-              <i class="fas fa-check-circle"></i> Send money frequently each
-              month
-            </p>
-          </div>
-          <div class="status-benefits">
-            <h3 class="benefit-title">
-              <i class="fas fa-gift"></i> Rewards & Benefits
-            </h3>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bus"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Bus Tickets</div>
-                <div class="benefit-value">20% discount</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Airtime</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Electricity</div>
-                <div class="benefit-value">Standard rates</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-gift"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Mystery Box</div>
-                <div class="benefit-value">Unlock at 500 points</div>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-ticket-alt"></i>
-              </div>
-              <div class="benefit-info">
-                <div class="benefit-name">Spin the Wheel</div>
-                <div class="benefit-value">Chance to win big</div>
-              </div>
-            </div>
-          </div>
-          <div class="status-features">
-            <h3 class="feature-title">
-              <i class="fas fa-tasks"></i> Spending Options
-            </h3>
-            <ul class="feature-list">
-              <li><i class="fas fa-check"></i> Airtime & Data</li>
-              <li><i class="fas fa-check"></i> Electricity</li>
-              <li><i class="fas fa-check"></i> Bus Tickets</li>
-              <li><i class="fas fa-check"></i> Vouchers</li>
-              <li><i class="fas fa-check"></i> Gift Cards</li>
-              <li><i class="fas fa-check"></i> Movie Tickets</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Progress Section -->
-      <div class="progress-section">
-        <h2 class="progress-title">Your Progress to Gold Status</h2>
-        <div class="progress-container">
-          <div class="progress-bar"></div>
-        </div>
-        <div class="progress-text">
-          <span>300 points</span>
-          <span>500 points for Gold</span>
-        </div>
-        <p>
-          You're 60% of the way to Gold status! Keep sending money to unlock
-          more rewards.
-        </p>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="cta-section">
-        <h2 class="cta-title">Ready to Upgrade Your Status?</h2>
-        <p class="cta-description">
-          Send money more frequently to unlock higher status levels and better
-          rewards
-        </p>
-        <button class="btn btn-primary">Send Money Now</button>
-      </div>
-
-      <div class="card-footer">
-        <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
-      </div>
+    <div class="card-footer">
+      <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // Dashboard → go to landingpage.html
-        document.getElementById("home").addEventListener("click", (e) => {
+        document.getElementById("dashboard").addEventListener("click", (e) => {
           e.preventDefault();
           window.location.href = "landingpage.html";
-        });
-
-        // Transaction History → scroll to bottom
-        document.getElementById("history").addEventListener("click", (e) => {
-          e.preventDefault();
-          window.location.href = "landingpage.html";
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
         });
 
         // Send Money → go to sendmoneypage.html
@@ -355,6 +355,31 @@
           e.preventDefault();
           window.location.href = "sendmoneypage.html";
         });
+
+        // Explore Statuses → stay on current page
+        document
+          .getElementById("explore-statuses")
+          .addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+
+        // Transaction History → scroll to bottom
+        document.getElementById("history").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        });
+
+        // Send Money button in CTA
+        document
+          .querySelector(".btn-primary")
+          .addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "sendmoneypage.html";
+          });
 
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
@@ -373,34 +398,6 @@
           ) {
             sidebar.classList.remove("active");
           }
-        });
-
-        // Bottom nav items functionality
-        const bottomNavItems = document.querySelectorAll(".bottom-nav-item");
-        bottomNavItems.forEach((item) => {
-          item.addEventListener("click", (e) => {
-            e.preventDefault();
-            bottomNavItems.forEach((navItem) =>
-              navItem.classList.remove("active")
-            );
-            item.classList.add("active");
-
-            // You can add navigation logic here based on which item was clicked
-            const icon = item.querySelector(".bottom-nav-icon i");
-            if (icon.classList.contains("fa-home")) {
-              window.location.href = "landingpage.html";
-            } else if (icon.classList.contains("fa-exchange-alt")) {
-              window.location.href = "sendmoneypage.html";
-            } else if (icon.classList.contains("fa-history")) {
-              window.location.href = "landingpage.html";
-              setTimeout(() => {
-                window.scrollTo({
-                  top: document.body.scrollHeight,
-                  behavior: "smooth",
-                });
-              }, 500);
-            }
-          });
         });
       });
 
