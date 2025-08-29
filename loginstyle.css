@@ -1,0 +1,73 @@
+:root {
+  --mukuru-primary: #FF6B00;
+  --mukuru-secondary: #FF8C3A;
+  --mukuru-dark: #1A1A1A;
+  --mukuru-light: #FFF5EB;
+  --mukuru-gray: #F5F5F7;
+  --mukuru-text: #333333;
+  --mukuru-green: #3b9d8d;
+}
+
+body {
+  margin:0; padding:20px;
+  display:flex; justify-content:center; align-items:center;
+  min-height:100vh; background: linear-gradient(135deg, var(--mukuru-light), #fff);
+  font-family:'Inter', sans-serif;
+  color: var(--mukuru-text);
+}
+
+.mukuru-card {
+  max-width: 400px;
+  width:100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(255,107,0,0.12);
+  transform: translateZ(0);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--mukuru-primary), var(--mukuru-secondary));
+  color:white; text-align:center; padding:28px 24px; position:relative;
+}
+
+.card-header h1 { font-size:26px; margin:0; }
+.card-header p { font-size:14px; margin-top:6px; opacity:0.9; }
+
+.card-content { padding:32px 28px; }
+
+input {
+  width:100%; padding:12px; margin:10px 0;
+  border-radius:8px; border:1px solid var(--mukuru-gray);
+  font-size:14px;
+}
+
+button {
+  width:100%; padding:12px; border:none; border-radius:8px;
+  font-size:16px; color:white; cursor:pointer; margin-top:10px;
+}
+
+#sendCodeBtn { background: var(--mukuru-primary); }
+#sendCodeBtn:hover { background: var(--mukuru-secondary); }
+
+#verifyCodeBtn { background: var(--mukuru-green); }
+#verifyCodeBtn:hover { filter: brightness(1.1); }
+
+.option-item {
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  background: linear-gradient(135deg,var(--mukuru-primary), var(--mukuru-secondary));
+  border-radius:12px; padding:12px; color:white; font-weight:600;
+  cursor:pointer; margin-bottom:12px;
+}
+
+.option-icon {
+  width:28px; height:28px; display:flex; justify-content:center; align-items:center;
+  background:white; color:var(--mukuru-primary); border-radius:50%; font-weight:bold;
+}
+
+#verification-section { display:none; }
+
+#error { color:red; margin-top:8px; font-size:14px; }
+
+.card-footer { text-align:center; padding:16px; font-size:12px; color:#888; }
