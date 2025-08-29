@@ -79,3 +79,9 @@ document.getElementById("gift-button").addEventListener("click", (e) => {
   e.preventDefault();
   window.location.href = "indexgame.html";
 });
+
+
+document.getElementById("whatsapp").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "https://api.whatsapp.com/send?phone=27860018555&text=Hi&source=website";
+});
