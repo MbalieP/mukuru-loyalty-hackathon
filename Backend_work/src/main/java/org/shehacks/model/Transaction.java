@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Transaction {
-    private double amount;
+    private float amount;
     private int pointsEarned;
     private String date;
 
-public Transaction(int amount){
+public Transaction(float amount){
     this.amount = amount;
     this.pointsEarned = calculatePoints(amount);
     this.date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
@@ -18,11 +18,12 @@ public Transaction(int amount){
     public String getDate(){
         return date;
     }
-    private int calculatePoints(double amount) {
+    private int calculatePoints(float amount) {
         // Example: 1 point for every R10 sent
-        return (int) (amount / 200);
+
+        return (int) (amount * 0.01);
     }
-    public double getAmount() { return amount; }
+    public float getAmount() { return amount; }
     public int getPointsEarned() { return pointsEarned; }
     }
 

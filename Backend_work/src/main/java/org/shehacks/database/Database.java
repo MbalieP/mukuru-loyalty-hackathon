@@ -6,7 +6,7 @@ import static java.sql.DriverManager.getConnection;
 
 public class Database {
 
-    private static final String DISK_DB_URL = "jdbc:sqlite:transaction_history.db";
+    public static final String DISK_DB_URL = "jdbc:sqlite:transaction_history.db";
 
     public static void connectDatabase() {
         try (final Connection connection = DriverManager.getConnection(DISK_DB_URL)) {
