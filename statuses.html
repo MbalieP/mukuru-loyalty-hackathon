@@ -38,6 +38,32 @@
       </a>
     </aside>
 
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-items">
+        <a href="#" class="bottom-nav-item active">
+          <div class="bottom-nav-icon"><i class="fas fa-home"></i></div>
+          <span>Home</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-exchange-alt"></i></div>
+          <span>Send</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-history"></i></div>
+          <span>History</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+          <div class="bottom-nav-icon"><i class="fas fa-user"></i></div>
+          <span>Profile</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="mobile-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <div class="container">
       <!-- Header -->
       <header>
@@ -329,7 +355,55 @@
           e.preventDefault();
           window.location.href = "sendmoneypage.html";
         });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        mobileMenuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("active");
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            sidebar.classList.contains("active") &&
+            !sidebar.contains(e.target) &&
+            !mobileMenuToggle.contains(e.target)
+          ) {
+            sidebar.classList.remove("active");
+          }
+        });
+
+        // Bottom nav items functionality
+        const bottomNavItems = document.querySelectorAll(".bottom-nav-item");
+        bottomNavItems.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            bottomNavItems.forEach((navItem) =>
+              navItem.classList.remove("active")
+            );
+            item.classList.add("active");
+
+            // You can add navigation logic here based on which item was clicked
+            const icon = item.querySelector(".bottom-nav-icon i");
+            if (icon.classList.contains("fa-home")) {
+              window.location.href = "landingpage.html";
+            } else if (icon.classList.contains("fa-exchange-alt")) {
+              window.location.href = "sendmoneypage.html";
+            } else if (icon.classList.contains("fa-history")) {
+              window.location.href = "landingpage.html";
+              setTimeout(() => {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                });
+              }, 500);
+            }
+          });
+        });
       });
+
       // Simple animation for progress bar
       document.addEventListener("DOMContentLoaded", function () {
         const progressBar = document.querySelector(".progress-bar");
