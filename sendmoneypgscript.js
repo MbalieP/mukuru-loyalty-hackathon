@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Current user balance (in Rands)
-  const userBalance = 2450.0;
+  let userBalance = 2450.0; // changed from const to let
   let currentPoints = 300;
 
   // Get form and UI elements
@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const pointsEarned = document.getElementById("pointsEarned");
   const errorDetails = document.getElementById("errorDetails");
   const sendButton = document.getElementById("sendButton");
+  const balanceDisplay = document.getElementById("balanceDisplay"); // add this in HTML
+  const pointsDisplay = document.getElementById("pointsDisplay"); // add this in HTML
+
+  // Initialize balance and points on page load
+  balanceDisplay.textContent = "R " + userBalance.toFixed(2);
+  pointsDisplay.textContent = currentPoints;
 
   // Function to animate the plane around the world
   function animateTransaction() {
@@ -73,6 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Calculate points earned
     const earnedPoints = calculatePoints(amount);
+
+    // Update balance & points
+    userBalance -= amount;
     currentPoints += earnedPoints;
 
     // Show success message after animation
@@ -80,11 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
       successRecipient.textContent = recipientName;
       successAmount.textContent = "R " + amount.toFixed(2);
       pointsEarned.textContent =
-        "Earned " +
-        earnedPoints +
-        " Zakas! Total: " +
-        currentPoints +
-        " Zakas";
+        "Earned " + earnedPoints + " Zakas! Total: " + currentPoints + " Zakas";
+
+      // Update UI displays
+      balanceDisplay.textContent = "R " + userBalance.toFixed(2);
+      pointsDisplay.textContent = currentPoints;
 
       successMessage.style.display = "block";
       errorMessage.style.display = "none";
@@ -110,22 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-  // Mobile menu toggle
-  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-  const sidebar = document.querySelector(".sidebar");
-
-  mobileMenuToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-  });
-
-  // Close sidebar when clicking outside
-  document.addEventListener("click", (e) => {
-    if (
-      sidebar.classList.contains("active") &&
-      !sidebar.contains(e.target) &&
-      !mobileMenuToggle.contains(e.target)
-    ) {
-      sidebar.classList.remove("active");
-    }
-  });
