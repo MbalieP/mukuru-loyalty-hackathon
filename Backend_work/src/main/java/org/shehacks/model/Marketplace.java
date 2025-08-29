@@ -7,8 +7,8 @@ public class Marketplace {
     private List<Rewards> rewards = new ArrayList<>();
 
     public Marketplace(){
-        rewards.add(new Rewards("R50 Airtime", 200, "Get R50 worth of airtime"));
-        rewards.add(new Rewards("Shopping Voucher", 500, "R100 Shoprite voucher"));
+        rewards.add(new Rewards("R50 Airtime", 50, "Get R50 worth of airtime"));
+        rewards.add(new Rewards("Electricity", 500, "R100 Shoprite voucher"));
         rewards.add(new Rewards("Data Bundle", 300, "1GB Data Bundle"));
 }
 

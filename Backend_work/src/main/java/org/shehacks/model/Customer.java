@@ -5,12 +5,13 @@ public class Customer {
     private String name;
     private int pointsBalance;
     private Tiers tier; //Member, Bronze, Silver, Gold
-
+    private int transactionsCount;
 public Customer(String cellphone, String name) {
     this.cellphone = cellphone;
     this.name = name;
     this.pointsBalance = 0;
     this.tier = Tiers.MEMBER;
+    this.transactionsCount= 0;
 }
     // --- Update points when a new transaction is made ---
 
@@ -19,20 +20,21 @@ public Customer(String cellphone, String name) {
     public String getCellphone() { return cellphone; }
     public String getName() { return name; }
     public int getPointsBalance() { return pointsBalance; }
-    public void setPointsBalance(int pointsBalance) { this.pointsBalance = pointsBalance; }
+
     public Tiers getTier() { return tier; }
     public void setTier(Tiers tier) { this.tier = tier; }
 
     public void addTransaction(Transaction transaction) {
         this.pointsBalance += transaction.getPointsEarned();
+        this.transactionsCount++;   // increment transaction count
         updateTier();
     }
     private void updateTier() {
-        if (pointsBalance >= 1000) {
+        if (transactionsCount >= 20) {
             this.tier = Tiers.GOLD;
-        } else if (pointsBalance >= 500) {
+        } else if (transactionsCount >= 10) {
             this.tier = Tiers.SILVER;
-        } else if (pointsBalance >= 100) {
+        } else if (transactionsCount >= 5) {
             this.tier = Tiers.BRONZE;
         } else {
             this.tier = Tiers.MEMBER;

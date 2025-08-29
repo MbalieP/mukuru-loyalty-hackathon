@@ -19,7 +19,7 @@ public Transaction(int amount){
         return date;
     }
     private int calculatePoints(double amount) {
-        // Example: 1 point for every R10 sent
+        // Example: 1 point for every R100 sent
         return (int) (amount / 200);
     }
     public double getAmount() { return amount; }
