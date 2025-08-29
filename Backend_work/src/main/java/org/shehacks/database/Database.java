@@ -5,6 +5,7 @@ import java.sql.*;
 import static java.sql.DriverManager.getConnection;
 
 public class Database {
+<<<<<<< HEAD
 //
 //    public static void connectDatabase(String DISK_DB_URL) {
 //        try (final Connection connection = DriverManager.getConnection(DISK_DB_URL)) {
@@ -29,6 +30,34 @@ public class Database {
 //            System.err.println( e.getMessage() );
 //        }
 //    }
+=======
+
+    public static final String DISK_DB_URL = "jdbc:sqlite:transaction_history.db";
+
+    public static void connectDatabase() {
+        try (final Connection connection = DriverManager.getConnection(DISK_DB_URL)) {
+            System.out.println("Connected to database ");
+            createTable(connection);
+
+        } catch ( SQLException e ) {
+            System.err.println( e.getMessage());
+        }
+    }
+
+    public static void createTable(Connection connection){
+        try (final Statement stmt = connection.createStatement()) {
+            stmt.execute("CREATE TABLE IF NOT EXISTS history (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "cellphone TEXT NOT NULL," +
+                    "amount FLOAT NOT NULL," +
+                    "date TEXT NOT NULL," +
+                    "points INTEGER NOT NULL," +
+                    "status TEXT NOT NULL);");
+        } catch (SQLException e) {
+            System.err.println( e.getMessage() );
+        }
+    }
+>>>>>>> 6e1bfa826524b972e08d734a41d1f5ac38fc73ca
 
 }
 

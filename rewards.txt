@@ -1,0 +1,8 @@
+airtime,5,all
+electricity,30,all
+voucher,50,all
+bus_ticket_discount,0.05,bronze
+bus_ticket_discount,0.1,silver
+bus_ticket_discount,0.2,gold
+mistery_box,500,all
+spin_the_will,2000,gold

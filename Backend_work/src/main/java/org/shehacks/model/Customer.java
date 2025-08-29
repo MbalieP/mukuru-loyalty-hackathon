@@ -18,6 +18,9 @@ public Customer(String cellphone, String name) {
 
     // Getters & Setters
     public String getCellphone() { return cellphone; }
+    public void setCellphone(String cellphone1){
+        this.cellphone = cellphone1;
+    }
     public String getName() { return name; }
     public int getPointsBalance() { return pointsBalance; }
 
