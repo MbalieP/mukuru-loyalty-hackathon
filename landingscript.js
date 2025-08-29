@@ -74,3 +74,8 @@ document.getElementById("send-now").addEventListener("click", (e) => {
   e.preventDefault();
   window.location.href = "sendmoneypage.html";
 });
+
+document.getElementById("gift-button").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "indexgame.html";
+});
