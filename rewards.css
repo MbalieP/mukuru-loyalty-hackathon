@@ -533,33 +533,38 @@ body {
 }
 
 .point {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   background: linear-gradient(135deg, #ffffff 0%, var(--mukuru-gray) 100%);
   border-radius: 50%;
-  margin: 0 10px;
+  margin: 0 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--mukuru-primary);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   border: 2px solid rgba(255, 107, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .point.earned {
-  background: linear-gradient(
-    135deg,
-    var(--mukuru-primary) 0%,
-    var(--mukuru-secondary) 100%
-  );
+  background: var(--mukuru-green);
   color: white;
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 15px rgba(255, 107, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(255, 107, 0, 0.3);
   transform: scale(1.1);
+}
+
+.gift-icon {
+  font-size: 18px;
+  color: var(--mukuru-primary);
+}
+
+.point.earned .gift-icon {
+  color: white;
 }
 
 .point.earned::after {
