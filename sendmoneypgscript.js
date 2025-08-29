@@ -114,25 +114,6 @@ form.addEventListener("submit", function (e) {
     errorMessage.style.display = "none";
   }, 5000);
 
-  // Check if today is the last day of the month
-  const today = new Date();
-  const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-
-  if (today.getDate() === lastDay) {
-  // Show Mukuru-style quiz
-  const quizContainer = document.getElementById("quizContainer");
-  quizContainer.innerHTML = `
-    <div class="mukuru-card">
-      <div class="card-header">
-        <h1>End-of-Month Quiz! 🇿🇦</h1>
-      </div>
-      <div class="card-content" id="quizContent"></div>
-    </div>
-  `;
-
-  // Call your quiz function (from quiz.js)
-  startQuiz(document.getElementById("quizContent"));
-}
-
+  
 });
 

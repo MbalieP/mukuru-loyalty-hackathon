@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+//   document.addEventListener("DOMContentLoaded", function () {
+//     // progressbar animation
+//   const progressBar = document.querySelector(".progress-bar");
+//   setTimeout(() => {
+//     progressBar.style.width = "60%";
+//   }, 300);
+// })
   // Send Money → go to sendmoneypage.html
   document.getElementById("send-money").addEventListener("click", (e) => {
     e.preventDefault();

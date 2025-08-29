@@ -7,24 +7,14 @@
 <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-<div class="mukuru-card">
-  <div class="card-header">
-    <h1>South Africa Quiz</h1>
-    <p>Answer the questions to succeed! 🇿🇦</p>
-  </div>
+  <div id="quizContainer"></div>
 
-  <div class="card-content">
-    <div class="progress-container">
-      <div class="progress-bar" id="progress-bar"></div>
-    </div>
-    <form id="quizForm">
-      <div id="question-container"></div>
-      <button type="submit">Next</button>
-    </form>
-    <p id="result"></p>
-  </div>
-</div>
-
-<script type="module" src="quiz.js"></script>
+  <script type="module">
+    import { startQuiz } from './quiz.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('quizContainer');
+      startQuiz(container);
+    });
+  </script>
 </body>
 </html>
