@@ -1,3 +1,0 @@
-airtime,5,all
-electricity,30,all
-cash,50,all
