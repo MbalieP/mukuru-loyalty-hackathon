@@ -45,7 +45,7 @@
           <div class="nav-icon"><i class="fas fa-user"></i></div>
           <span>Profile Settings</span>
         </a>
-        <a href="#" class="nav-item">
+        <a href="#" id="whatsapp" class="nav-item">
           <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
           <span>Help & Support</span>
         </a>
@@ -109,9 +109,8 @@
                 <div class="benefit-info">
                   <div class="benefit-name">Electricity</div>
                   <div class="benefit-value">Standard rates</div>
-                </div>  
+                </div>
               </div>
-              
             </div>
             <div class="status-features">
               <h3 class="feature-title">
@@ -296,8 +295,8 @@
             <span>500 Zakas</span>
           </div>
           <p>
-            You're 60% of the way to a SURPRISE gift! Keep sending money to unlock
-            more rewards.
+            You're 60% of the way to a SURPRISE gift! Keep sending money to
+            unlock more rewards.
           </p>
         </div>
 
@@ -368,6 +367,12 @@
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           });
+
+        document.getElementById("whatsapp").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href =
+            "https://api.whatsapp.com/send?phone=27860018555&text=Hi&source=website";
+        });
 
         // Transaction History → scroll to bottom
         document.getElementById("history").addEventListener("click", (e) => {

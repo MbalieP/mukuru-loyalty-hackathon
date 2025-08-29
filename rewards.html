@@ -46,7 +46,7 @@
           <div class="nav-icon"><i class="fas fa-user"></i></div>
           <span>Profile Settings</span>
         </a>
-        <a href="#" class="nav-item">
+        <a href="#" id="whatsapp" class="nav-item">
           <div class="nav-icon"><i class="fas fa-question-circle"></i></div>
           <span>Help & Support</span>
         </a>
@@ -132,8 +132,8 @@
               <div class="point earned">300</div>
               <div class="point">400</div>
               <div class="point">
-              <i class="fas fa-gift gift-icon"></i>
-            </div>
+                <i class="fas fa-gift gift-icon"></i>
+              </div>
             </div>
           </div>
 
@@ -209,6 +209,12 @@
             e.preventDefault();
             window.location.href = "statuses.html";
           });
+
+        document.getElementById("whatsapp").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href =
+            "https://api.whatsapp.com/send?phone=27860018555&text=Hi&source=website";
+        });
 
         // Transaction History → scroll to bottom
         document.getElementById("history").addEventListener("click", (e) => {

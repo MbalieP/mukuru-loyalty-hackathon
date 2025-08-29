@@ -119,3 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.getElementById("whatsapp").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href =
+    "https://api.whatsapp.com/send?phone=27860018555&text=Hi&source=website";
+});
