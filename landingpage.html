@@ -56,7 +56,7 @@
         <div class="welcome-banner">
           <div class="welcome-text">
             <h2>Welcome back, Mbali!</h2>
-            <p>You've earned 30 points this month. Keep it up!</p>
+            <p>You've earned 30 Zakas this month. Keep it up!</p>
           </div>
           <div class="status-badge">
             <i class="fas fa-crown"></i>
@@ -72,7 +72,7 @@
               style="font-size: 24px; color: var(--mukuru-primary)"
             ></i>
             <div class="stat-value">300</div>
-            <div class="stat-label">Points Balance</div>
+            <div class="stat-label">Zaka Balance</div>
           </div>
           <div class="stat-card">
             <i
@@ -99,26 +99,38 @@
             <a href="#" class="view-all">View all rewards</a>
           </div>
 
-          <div class="progress-container">
-            <div class="progress-bar"></div>
+          <!-- Progress Ring -->
+          <div class="progress-ring-container">
+            <div class="progress-ring">
+              <div class="progress-ring-bg"></div>
+              <div class="progress-ring-circle" id="progressCircle"></div>
+              <div class="progress-ring-overlay">
+                <div class="progress-ring-text" id="pointsText">300</div>
+                <div class="progress-ring-subtext">of 500 Zakas</div>
+              </div>
+            </div>
           </div>
 
           <div class="progress-text">
-            <span>300 points</span>
+            <span id="progressPercentage">60% complete</span>
           </div>
 
           <div class="points-display">
-            <div class="point earned">50</div>
             <div class="point earned">100</div>
-            <div class="point">150</div>
-            <div class="point">200</div>
-            <div class="point">250</div>
+            <div class="point earned">200</div>
+            <div class="point earned">300</div>
+            <div class="point">400</div>
+            <div class="point">
+              <i class="fas fa-gift gift-icon"></i>
+            </div>
           </div>
 
-          <p style="text-align: center; color: #666; margin-top: 10px">
-            Send money at least once a month to maintain your Silver status
-          </p>
+          <p class="reward-message">Reach 500 Zaka's to unlock your SURPRISE reward!</p>
         </div>
+
+        <p style="text-align: center; color: #666; margin-top: 10px">
+          Send money at least once a month to maintain your Silver status
+        </p>
 
         <!-- Actions Grid -->
         <div class="actions-grid">
@@ -139,7 +151,7 @@
             </div>
             <h3 class="action-title">Explore Rewards</h3>
             <p class="action-description">
-              Redeem your points for exciting rewards
+              Redeem your Mukuru Zakas for exciting rewards
             </p>
             <button id="view-rewards" class="btn btn-outline">
               View Rewards
@@ -164,7 +176,7 @@
                 <p>Today, 10:23 AM</p>
               </div>
             </div>
-            <div class="transaction-amount">+15 pts</div>
+            <div class="transaction-amount">+15 zk</div>
           </div>
 
           <div class="transaction-item">
@@ -177,7 +189,7 @@
                 <p>Aug 1, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">+15 pts</div>
+            <div class="transaction-amount">+15 zk</div>
           </div>
 
           <div class="transaction-item">
@@ -190,7 +202,7 @@
                 <p>Jul 12, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">-50 pts</div>
+            <div class="transaction-amount">-50 zk</div>
           </div>
 
           <div class="transaction-item" style="border-bottom: none">
@@ -203,7 +215,7 @@
                 <p>Jul 5, 2025</p>
               </div>
             </div>
-            <div class="transaction-amount">-75 pts</div>
+            <div class="transaction-amount">-75 zk</div>
           </div>
         </div>
       </main>
@@ -212,8 +224,5 @@
       <p>© 2025 Mukuru Rewards Program | Terms & Conditions</p>
     </div>
     <script src="landingscript.js" defer></script>
-  
-
-
   </body>
 </html>

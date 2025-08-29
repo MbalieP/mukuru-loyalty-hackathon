@@ -1,25 +1,25 @@
-// Simple animation for progress bar
 document.addEventListener("DOMContentLoaded", function () {
-  const progressBar = document.querySelector(".progress-bar");
-  setTimeout(() => {
-    progressBar.style.width = "60%";
-  }, 300);
-});
+  // Progress ring animation
+  const currentPoints = 300;
+  const maxPoints = 500;
+  const percentage = (currentPoints / maxPoints) * 100;
+  const progressCircle = document.getElementById("progressCircle");
+  const pointsText = document.getElementById("pointsText");
+  const progressPercentage = document.getElementById("progressPercentage");
 
-document.addEventListener("DOMContentLoaded", () => {
+  // Animate the progress ring
+  setTimeout(() => {
+    progressCircle.style.transform = `rotate(${percentage * 3.6}deg)`;
+    pointsText.textContent = currentPoints;
+    progressPercentage.textContent = `${Math.round(percentage)}% complete`;
+  }, 300);
+
   // Dashboard → scroll to top
   document.getElementById("dashboard").addEventListener("click", (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-//   document.addEventListener("DOMContentLoaded", function () {
-//     // progressbar animation
-//   const progressBar = document.querySelector(".progress-bar");
-//   setTimeout(() => {
-//     progressBar.style.width = "60%";
-//   }, 300);
-// })
   // Send Money → go to sendmoneypage.html
   document.getElementById("send-money").addEventListener("click", (e) => {
     e.preventDefault();

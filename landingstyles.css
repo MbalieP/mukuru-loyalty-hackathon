@@ -214,32 +214,72 @@ body {
   font-size: 14px;
 }
 
-.progress-container {
-  width: 100%;
-  background-color: rgba(255, 140, 58, 0.15);
-  border-radius: 12px;
-  margin: 20px 0;
-  overflow: hidden;
-  height: 10px;
+/* Progress Ring Styles */
+.progress-ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
   position: relative;
 }
 
-.progress-bar {
-  height: 100%;
-  width: 60%;
-  background: linear-gradient(
-    to right,
-    var(--mukuru-primary),
-    var(--mukuru-secondary)
-  );
-  border-radius: 12px;
+.progress-ring {
+  width: 200px;
+  height: 200px;
   position: relative;
-  box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}
+
+.progress-ring-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--mukuru-green);
+  position: absolute;
+}
+
+.progress-ring-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  clip-path: polygon(50% 50%, 50% 0, 0 0, 0 50%);
+  background: conic-gradient(
+    var(--mukuru-primary) 0% 60%,
+    var(--mukuru-secondary) 60% 100%
+  );
+  position: absolute;
+  transition: all 1.5s ease-in-out;
+}
+
+.progress-ring-overlay {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-ring-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--mukuru-green);
+}
+
+.progress-ring-subtext {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
 }
 
 .progress-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 12px;
   font-size: 14px;
   color: #666;
@@ -272,15 +312,27 @@ body {
 }
 
 .point.earned {
-  background: linear-gradient(
-    135deg,
-    var(--mukuru-primary) 0%,
-    var(--mukuru-secondary) 100%
-  );
+  background: var(--mukuru-green);
   color: white;
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 6px 12px rgba(255, 107, 0, 0.3);
   transform: scale(1.1);
+}
+
+.gift-icon {
+  font-size: 18px;
+  color: var(--mukuru-primary);
+}
+
+.point.earned .gift-icon {
+  color: white;
+}
+
+.reward-message {
+  text-align: center;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
 }
 
 /* Actions Section */
@@ -448,5 +500,17 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 15px;
+  }
+
+  .progress-ring {
+    width: 180px;
+    height: 180px;
+  }
+
+  .progress-ring-overlay {
+    width: 140px;
+    height: 140px;
+    top: 20px;
+    left: 20px;
   }
 }
