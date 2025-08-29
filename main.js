@@ -1,3 +1,5 @@
+console.log("main.js loaded");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.0/firebase-app.js";
         import { 
         getAuth, 
@@ -6,6 +8,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.0/firebas
         signInWithPhoneNumber,
         RecaptchaVerifier
         } from "https://www.gstatic.com/firebasejs/12.2.0/firebase-auth.js"
+
+
 document.addEventListener("DOMContentLoaded", () => {
         ;
 
@@ -29,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const error = document.getElementById("error");
         const sendCodeBtn = document.getElementById('sendCodeBtn');
         const verifyCodeBtn = document.getElementById('verifyCodeBtn');
+
+        console.log("googleBtn:", googleBtn);
+        console.log("sendCodeBtn:", sendCodeBtn);
+        console.log("verifyCodeBtn:", verifyCodeBtn);
+
 
         // -------- Helper: Check if today is the 29th --------
         function isQuizDay() {
@@ -56,52 +65,65 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         });
 
-        // -------- Phone Login --------
-        window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
-  'size': 'invisible',
-  'callback': (response) => {
-    console.log("reCAPTCHA solved", response);
-  }
-    }, auth);
+// -------- Phone Login --------
+window.recaptchaVerifier = new RecaptchaVerifier(
+    auth,
+  'recaptcha-container',   // must match your <div id="recaptcha-container"></div>
+  {
+    size: 'normal',
+    callback: (response) => {
+      console.log("reCAPTCHA solved:", response);
+    }
+  },
 
-    window.recaptchaVerifier.render().then(widgetId => {
-   window.recaptchaWidgetId = widgetId;
+);
+window.recaptchaVerifier.render().then(widgetId => {
+  console.log("reCAPTCHA widget ID:", widgetId);
 });
 
 
-      sendCodeBtn.addEventListener('click', async () => {
+sendCodeBtn.addEventListener('click', async () => {
+   
   const phoneNumber = document.getElementById('phoneNumber').value.trim();
   const appVerifier = window.recaptchaVerifier;
 
   if (!/^0\d{9}$/.test(phoneNumber)) {
-    error.textContent = "Invalid phone number!";
+    error.textContent = "❌ Invalid phone number!";
     return;
   }
 
   try {
-    const confirmationResult = await signInWithPhoneNumber(auth, "+27" + phoneNumber.slice(1), appVerifier);
+    const confirmationResult = await signInWithPhoneNumber(
+      auth,
+      "+27" + phoneNumber.slice(1),  // e.g. 0812345678 → +27812345678
+      appVerifier
+    );
+    
+    console.log("SMS sent");
     window.confirmationResult = confirmationResult;
     document.getElementById('verification-section').style.display = 'block';
-    error.textContent = "✅ Code sent!";
+    error.textContent = "✅ Code sent! Check SMS.";
   } catch (err) {
     console.error(err);
-    error.textContent = err.message;
+    error.textContent = "Error: " + err.message;
   }
 });
 
-
-       verifyCodeBtn.addEventListener('click', async () => {
+verifyCodeBtn.addEventListener('click', async () => {
   const code = document.getElementById('verificationCode').value.trim();
   try {
     const result = await window.confirmationResult.confirm(code);
     console.log("Phone login successful", result.user);
-        if (isQuizDay()) {
-        window.location.href = "quiz.html";
-        } else {
-        window.location.href = "landingpage.html";
-        }
-        } catch (err) {
-        error.textContent = "Invalid code!";
-        }
-        });
-    })
+
+    // Redirect based on date
+    if (isQuizDay()) {
+      window.location.href = "quiz.html";
+    } else {
+      window.location.href = "landingpage.html";
+    }
+  } catch (err) {
+    console.error(err);
+    error.textContent = "❌ Invalid code!";
+  }
+});
+})

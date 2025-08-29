@@ -66,8 +66,9 @@ button {
   background:white; color:var(--mukuru-primary); border-radius:50%; font-weight:bold;
 }
 
-#verification-section { display:none; }
-
 #error { color:red; margin-top:8px; font-size:14px; }
+
+
+#verification-section { display:none; }
 
 .card-footer { text-align:center; padding:16px; font-size:12px; color:#888; }
