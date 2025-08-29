@@ -1,0 +1,80 @@
+:root {
+  --mukuru-primary: #FF6B00;
+  --mukuru-secondary: #FF8C3A;
+  --mukuru-dark: #1A1A1A;
+  --mukuru-gray: #F5F5F7;
+  --mukuru-text: #333333;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #FFF5EB 0%, #FFFFFF 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--mukuru-text);
+}
+
+.mukuru-card {
+  max-width: 480px;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(255,107,0,0.12), 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--mukuru-primary) 0%, var(--mukuru-secondary) 100%);
+  color: white;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.card-header h1 { font-size: 26px; font-weight: 700; }
+.card-header p { font-size: 14px; opacity: 0.9; margin-top: 6px; }
+
+.card-content { padding: 32px 28px; }
+
+form input[type="radio"] { margin-right: 8px; }
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--mukuru-primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover { background: var(--mukuru-secondary); }
+
+#result {
+  font-weight: 700;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: rgba(255, 140, 58, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, var(--mukuru-primary), var(--mukuru-secondary));
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Mukuru Style</title>
+<link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+<div class="mukuru-card">
+  <div class="card-header">
+    <h1>Welcome Back</h1>
+    <p>Sign in with Google or your phone number</p>
+  </div>
+
+  <div class="card-content">
+    <!-- Google Sign-In -->
+    <button id="google-btn" class="option-item">
+      <div class="option-icon">G</div>
+      <div class="option-text">Sign in with Google</div>
+    </button>
+
+    <p style="margin:16px 0; font-weight:500; opacity:0.7;">OR</p>
+
+    <!-- Phone Login -->
+    <input type="text" id="phoneNumber" placeholder="Enter Phone (0821234567)">
+    <div id="recaptcha-container"></div>
+    <button id="sendCodeBtn">Send Code</button>
+
+    <div id="verification-section">
+      <input type="text" id="verificationCode" placeholder="Enter code">
+      <button id="verifyCodeBtn">Verify</button>
+    </div>
+
+    <p id="error"></p>
+  </div>
+
+  <div class="card-footer">
+    © 2025 Mukuru Login
+  </div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
